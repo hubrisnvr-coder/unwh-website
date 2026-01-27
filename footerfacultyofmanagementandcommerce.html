@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty of Management and Commerce - UNwH Dehradun</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #004d99;
+            --primary-dark: #003366;
+            --accent: #00b894;
+            --light-bg: #f8f9fa;
+            --gray-light: #f0f4f8;
+            --text-dark: #212529;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gray-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--primary) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 77, 153, 0.85), rgba(0, 77, 153, 0.75)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p.lead {
+            font-size: 1.6rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.4rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin: 6rem 0 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 90px;
+            height: 5px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2.8rem;
+            padding: 0 1rem;
+        }
+
+        .faculty-member {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .faculty-member:hover {
+            transform: translateY(-14px);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+        }
+
+        .faculty-photo {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .faculty-info {
+            padding: 2.2rem 1.8rem 2.8rem;
+        }
+
+        .faculty-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .faculty-designation {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.3rem;
+        }
+
+        .faculty-qualification {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.6rem;
+            line-height: 1.7;
+        }
+
+        .faculty-message {
+            font-style: italic;
+            color: #666;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.65rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background: #009f7f;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 992px) {
+            .hero-section h1 { font-size: 4rem; }
+            .faculty-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+            .faculty-photo { height: 360px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section { padding: 100px 0 80px; }
+            .hero-section h1 { font-size: 3.2rem; }
+            .section-title { font-size: 2.7rem; }
+            .faculty-photo { height: 340px; }
+            .faculty-name { font-size: 2rem; }
+            .faculty-designation { font-size: 1.2rem; }
+            .faculty-grid { gap: 2.2rem; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section h1 { font-size: 2.8rem; }
+            .faculty-photo { height: 300px; }
+            .faculty-name { font-size: 1.8rem; }
+            .faculty-designation { font-size: 1.1rem; }
+            .read-more-btn { padding: 0.6rem 1.5rem; }
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 5rem 0 3rem;
+            margin-top: 8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">UNwH Dehradun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contect.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Faculty of Management and Commerce</h1>
+            <p class="lead">Our highly qualified and experienced faculty members are committed to academic excellence and holistic development of every student.</p>
+        </div>
+    </section>
+
+    <!-- All Faculty – Open Layout (Direct Grid) -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Our Esteemed Faculty Members</h2>
+            
+            <div class="faculty-grid">
+
+                <!-- 1 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/2160439329/photo/happy-multiethnic-male-teacher-smiling-at-primary-school.jpg?s=612x612&w=0&k=20&c=0-Lem0EucN1GIoZduYU0rPXUZuGuquTgz_nPXuR-210=" class="faculty-photo" alt="Dr. Rajesh Sharma">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Rajesh Sharma</h4>
+                        <p class="faculty-designation">Professor & Dean</p>
+                        <p class="faculty-qualification">Ph.D. (Management), 18+ years experience<br>Specialization: Strategic Management & Entrepreneurship</p>
+                        <p class="faculty-message">"Education is the most powerful weapon which you can use to change the world..."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1368913184/photo/indian-young-women-stock-photo.jpg?s=612x612&w=0&k=20&c=K6E1JxvOUy3lG_3Ol83VPeXmijpLGTfTrg802dtvSK8=" class="faculty-photo" alt="Dr. Anjali Mehta">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Anjali Mehta</h4>
+                        <p class="faculty-designation">Professor</p>
+                        <p class="faculty-qualification">Ph.D. (Marketing), 15+ years experience<br>Specialization: Digital Marketing & Consumer Behavior</p>
+                        <p class="faculty-message">"In the age of disruption, the best marketing strategy is to be remarkable."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1414062353/photo/smiling-young-indian-business-man-wearing-suit-standing-in-office-portrait.jpg?s=612x612&w=0&k=20&c=ypM13ps_HgydMFpI0ffg1YAwBCMrPPIAr1zBU_Gvb30=" class="faculty-photo" alt="Prof. Vikram Singh">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Vikram Singh</h4>
+                        <p class="faculty-designation">Associate Professor</p>
+                        <p class="faculty-qualification">Ph.D. (Finance), 12+ years experience<br>Specialization: Corporate Finance & Investment</p>
+                        <p class="faculty-message">"Wealth is not about having a lot of money; it's about having a lot of options."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1792830306/photo/portrait-of-indian-woman-as-a-teacher-in-sari-standing-isolated-over-white-background-stock.jpg?s=612x612&w=0&k=20&c=y13QjeDQDK3BTVrkz2UP5XHuOhSxkhYY_sYEuXjgWug=" class="faculty-photo" alt="Dr. Priya Kapoor">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Priya Kapoor</h4>
+                        <p class="faculty-designation">Associate Professor</p>
+                        <p class="faculty-qualification">Ph.D. (HRM), 10+ years experience<br>Specialization: Organizational Behavior & Leadership</p>
+                        <p class="faculty-message">"Great leaders don't set out to be leaders; they set out to make a difference."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/471205529/photo/young-man.jpg?s=612x612&w=0&k=20&c=KHLXL2Bpyxhsz1_G-VUlYHiXfh7xOhk6Edzd_L79-Ck=" class="faculty-photo" alt="Dr. Amit Verma">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Amit Verma</h4>
+                        <p class="faculty-designation">Assistant Professor</p>
+                        <p class="faculty-qualification">Ph.D. (Agri-Business), 8+ years experience<br>Specialization: Rural Marketing & Supply Chain</p>
+                        <p class="faculty-message">"Sustainable agriculture is the future of food security and economic growth."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1476621856/photo/side-profile-view-portrait-of-businesswoman-writing-to-do-check-list-isolated-over-white.jpg?s=612x612&w=0&k=20&c=bz_M0Xm9agh7BIHMD6AXRZ1RJgBMFXkfDMVuoGMSvy4=" class="faculty-photo" alt="Prof. Neha Gupta">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Neha Gupta</h4>
+                        <p class="faculty-designation">Assistant Professor</p>
+                        <p class="faculty-qualification">MBA, Ph.D. (Pursuing), 6+ years<br>Specialization: Tourism & Hospitality</p>
+                        <p class="faculty-message">"True hospitality is about making guests feel like family."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1541952893/photo/portrait-indian-senior-man-wearing-eye-glasses-standing-cross-arm-indoors-retired-asian-old.jpg?s=612x612&w=0&k=20&c=EPTUEmgtBJ-Hhiti6gMXi4rnnIL4J-ODTqMW2sj5ofE=" class="faculty-photo" alt="Dr. Sanjay Patel">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Sanjay Patel</h4>
+                        <p class="faculty-designation">Assistant Professor</p>
+                        <p class="faculty-qualification">Ph.D. (Economics), 9+ years<br>Specialization: Business Economics</p>
+                        <p class="faculty-message">"Economics is everywhere, and understanding it empowers better decisions."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/2039748897/photo/portrait-of-indian-mid-adult-woman-teaching-isolated-on-white-background-stock-photo.jpg?s=612x612&w=0&k=20&c=GXkO3oeWbsm7TT6bjNzEl9eLjbTOTDKo6gBBSp3RmIs=" class="faculty-photo" alt="Prof. Ritu Sharma">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Ritu Sharma</h4>
+                        <p class="faculty-designation">Lecturer</p>
+                        <p class="faculty-qualification">MBA, NET, 5+ years<br>Specialization: Retail & E-Commerce</p>
+                        <p class="faculty-message">"The future belongs to those who understand digital commerce."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/958064532/photo/portrait-of-happy-young-man.jpg?s=612x612&w=0&k=20&c=yohX1QJgMk46EyVlDohOxVmr1y8MmwkPXquN9J1XAUk=" class="faculty-photo" alt="Dr. Karan Malhotra">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Karan Malhotra</h4>
+                        <p class="faculty-designation">Lecturer</p>
+                        <p class="faculty-qualification">Ph.D. (Marketing), 7+ years<br>Specialization: Brand Management</p>
+                        <p class="faculty-message">"A brand is no longer what we tell customers; it is what customers tell each other."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1300292129/photo/portrait-of-young-girl-stock-photo.jpg?s=612x612&w=0&k=20&c=bKxyBeg_0c1DcYAvcC3lEaxpxRNK5U9YI2MD0gC-Bdw=" class="faculty-photo" alt="Prof. Meera Nair">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Meera Nair</h4>
+                        <p class="faculty-designation">Guest Faculty</p>
+                        <p class="faculty-qualification">MBA, 20+ years industry<br>Specialization: International Business</p>
+                        <p class="faculty-message">"Think global, act local – the mantra of successful business."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1256156663/photo/handsome-man-stock-photo.jpg?s=612x612&w=0&k=20&c=zTPt0YyfFCPK6sk3olhFXw4R4NeJftiJnKXlnX2kTJs=" class="faculty-photo" alt="Dr. Rohit Joshi">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Rohit Joshi</h4>
+                        <p class="faculty-designation">Assistant Professor</p>
+                        <p class="faculty-qualification">Ph.D. (Finance), 9+ years</p>
+                        <p class="faculty-message">"Risk comes from not knowing what you're doing."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1291246157/photo/portrait-young-woman-stock-photo.jpg?s=612x612&w=0&k=20&c=5T3ZXEEOhP0MRUEC98Cv4lKKw1Gp1Rraejt7XUx6nfY=" class="faculty-photo" alt="Prof. Sneha Reddy">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Sneha Reddy</h4>
+                        <p class="faculty-designation">Lecturer</p>
+                        <p class="faculty-qualification">MBA, 6+ years</p>
+                        <p class="faculty-message">"Success in business requires training and discipline."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 13 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/841462706/photo/portrait-of-a-middle-aged-indian.jpg?s=612x612&w=0&k=20&c=4WOr9psQegCXjgZjzT5bUSYphSVPB0MYXqmzaa2zgZc=" class="faculty-photo" alt="Dr. Vivek Kumar">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Vivek Kumar</h4>
+                        <p class="faculty-designation">Associate Professor</p>
+                        <p class="faculty-qualification">Ph.D. (HR), 11+ years</p>
+                        <p class="faculty-message">"People are the real asset of any organization."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1474004476/photo/portrait-of-beautiful-young-businesswoman-pointing-on-copyspace-stock-photo.jpg?s=612x612&w=0&k=20&c=4CE-wgut00j4Ze7va_ChMUwhaftQXBhl3AOZ1bt94y8=" class="faculty-photo" alt="Prof. Pooja Singh">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Pooja Singh</h4>
+                        <p class="faculty-designation">Assistant Professor</p>
+                        <p class="faculty-qualification">Ph.D. (Marketing), 8+ years</p>
+                        <p class="faculty-message">"Marketing is no longer about the stuff you make, but about the stories you tell."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 15 -->
+                <div class="faculty-member">
+                    <img src="https://media.istockphoto.com/id/1134188554/photo/middle-age-business-man-smiling-to-the-camera.jpg?s=612x612&w=0&k=20&c=VSUVfWAz3NfEpRkQk9-dIKOXPFjqllaF5jm2JGZDnMo=" class="faculty-photo" alt="Dr. Arjun Mehra">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Arjun Mehra</h4>
+                        <p class="faculty-designation">Lecturer</p>
+                        <p class="faculty-qualification">MBA, 5+ years</p>
+                        <p class="faculty-message">"Innovation distinguishes between a leader and a follower."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Add more faculty if you want 20+ -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h4 class="fw-bold mb-3">The University of North West Himalayas (UNwH)</h4>
+                    <p>Village- Sangaon Bhagwanpur, Dharkot Road, Thano<br>Dehradun – 248143, Uttarakhand, India</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-2"><strong>Contact:</strong> +916396004079 | Email: info@unwh.edu.in</p>
+                    <p>© 2026 UNwH Dehradun by IT Manager Shubham Kumar. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

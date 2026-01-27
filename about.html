@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - UNwH Dehradun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fdfdfd 0%, #f5f7fa 100%);
+            color: #111111;
+        }
+        .hero {
+            background: linear-gradient(135deg, #003d33 0%, #001a14 100%), url('https://images.unsplash.com/photo-1540979388789-7cee28a1cdc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-blend-mode: multiply;
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 220px 0 150px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
+        }
+        .section-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #004d40;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 120px;
+            height: 6px;
+            background: #00796b;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        .feature-card {
+            background: #f9fafb;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid #e0e0e0;
+            padding: 40px;
+        }
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(0,121,107,0.18);
+        }
+        .card-icon {
+            font-size: 3.8rem;
+            color: #00796b;
+            margin-bottom: 25px;
+        }
+        .cta-btn {
+            background: linear-gradient(90deg, #004d40, #00796b);
+            border: none;
+            padding: 18px 70px;
+            font-size: 1.4rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,121,107,0.25);
+            transition: all 0.3s;
+            color: white;
+        }
+        .cta-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 45px rgba(0,121,107,0.45);
+        }
+        .vision-mission {
+            background: #f0f4f8;
+            padding: 80px 0;
+            border-radius: 20px;
+        }
+        footer {
+            background: linear-gradient(90deg, #003d33, #001a14);
+            color: #e0f2f1;
+            padding: 70px 0;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (same as previous pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #004d40, #00796b);">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">UNwH Dehradun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admission-brochure.html">Brochure</a></li>
+                    <li class="nav-item"><a class="nav-link" href="enquiry.html">Enquiry Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container position-relative">
+            <h1>About UNwH</h1>
+            <p class="lead fs-1 mt-4 fw-bold">Empowering Minds in the Lap of the Himalayas</p>
+            <p class="fs-3 mt-4 fw-light">A Premier Institution Dedicated to Excellence, Innovation, and Transformative Education</p>
+            <a href="index.html" class="btn cta-btn mt-5">Know More & Apply <i class="fas fa-arrow-right ms-3"></i></a>
+        </div>
+    </section>
+
+    <div class="container py-5">
+
+        <!-- Overview -->
+        <section class="mb-5">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="feature-card text-center">
+                <p class="lead fs-4 text-dark">
+                    The University of North West Himalayas (UNwH), nestled in the serene foothills of the Himalayas in Dehradun, Uttarakhand, is a dynamic private university committed to academic excellence, interdisciplinary learning, and global leadership. Established with a vision to create a transformative educational ecosystem, UNwH empowers students through innovation, research, inclusive education, and real-world relevance.
+                </p>
+                <p class="fs-5 mt-4 text-muted">
+                    Located in the scenic Village Sangaon Bhagwanpur, Dharkot Road, Thano – our campus offers panoramic views of the Shivalik Hills and a peaceful environment that inspires learning and growth.
+                </p>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
+        <section class="vision-mission mb-5">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-eye card-icon"></i>
+                        <h3 class="fw-bold text-primary">Our Vision</h3>
+                        <p class="fs-5 text-dark">
+                            To become a globally recognized center of excellence in education, fostering innovation, sustainability, and leadership while nurturing future thinkers, researchers, and changemakers in harmony with nature.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-bullseye card-icon"></i>
+                        <h3 class="fw-bold text-primary">Our Mission</h3>
+                        <p class="fs-5 text-dark">
+                            To provide quality, inclusive, and affordable education that empowers students to achieve academic and professional excellence. We promote research, interdisciplinary collaboration, ethical values, and holistic development in a supportive Himalayan environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="mb-5">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-lightbulb card-icon"></i>
+                        <h5 class="text-dark">Innovation & Excellence</h5>
+                        <p class="text-muted">Pushing boundaries through creative teaching and research.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-handshake card-icon"></i>
+                        <h5 class="text-dark">Inclusivity & Integrity</h5>
+                        <p class="text-muted">Diverse community with ethical practices and equal opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-leaf card-icon"></i>
+                        <h5 class="text-dark">Sustainability & Harmony</h5>
+                        <p class="text-muted">Eco-friendly campus in the Himalayas, nurturing responsible global citizens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="text-center py-5">
+            <h3 class="fw-bold fs-2 mb-4 text-dark">Ready to Join the UNwH Family?</h3>
+            <a href="enquirynow.html" class="btn cta-btn fs-4 px-5 py-3">Submit Enquiry Now</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0 fs-4">&copy; 2026 The University of North West Himalayas (UNwH) by IT Manager Shubham Kumar , Dehradun. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

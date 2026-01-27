@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Life at UNWH | Student Life & Campus Culture</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    overflow-x:hidden;
+}
+
+/* TOP HEADER IMAGE */
+.top-header{
+    height:320px;
+    background:url('https://images.unsplash.com/photo-1562774053-701939374585');
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+.top-header::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+.top-header .title-box{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-align:center;
+}
+.top-header h1{
+    font-size:52px;
+    font-weight:800;
+}
+
+/* HERO */
+.hero{
+    padding:90px 0;
+    text-align:center;
+}
+.hero h2{
+    font-size:42px;
+    font-weight:800;
+    color:#0d6efd;
+}
+.hero p{
+    font-size:18px;
+    max-width:900px;
+    margin:20px auto 0;
+}
+
+/* SECTION */
+.section{
+    margin:90px 0;
+}
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+.section-title h2{
+    font-weight:800;
+    color:#0d6efd;
+}
+
+/* IMAGE CARDS */
+.life-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+    transition:.5s;
+}
+.life-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:.6s;
+}
+.life-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.1));
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:30px;
+}
+.life-card:hover img{
+    transform:scale(1.15);
+}
+.life-card:hover{
+    transform:translateY(-15px);
+}
+
+/* EXPERIENCE BOX */
+.exp-box{
+    background:#fff;
+    padding:55px;
+    border-radius:30px;
+    box-shadow:0 30px 70px rgba(0,0,0,.15);
+}
+
+/* VIBE BOX */
+.vibe{
+    background:linear-gradient(135deg,#0d6efd,#6610f2);
+    color:#fff;
+    padding:70px;
+    border-radius:40px;
+    text-align:center;
+}
+.vibe h3{
+    font-size:36px;
+    font-weight:700;
+}
+
+/* STUDENT QUOTE */
+.quote{
+    background:#fff;
+    border-radius:30px;
+    padding:60px;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    position:relative;
+    text-align:center;
+}
+.quote::before{
+    content:"“";
+    font-size:120px;
+    position:absolute;
+    top:-40px;
+    left:20px;
+    color:#0d6efd;
+    opacity:.2;
+}
+
+/* FOOTER */
+footer{
+    background:#0d6efd;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP HEADER IMAGE -->
+<section class="top-header">
+    <div class="title-box">
+        <div>
+            <h1>Life at UNWH</h1>
+            <p class="mb-0">Student Life • Campus Culture • Experiences</p>
+        </div>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="hero container">
+    <h2>Experience Campus Life Beyond Classrooms</h2>
+    <p>
+        Life at The University of North West Himalayas is vibrant, inspiring and full of opportunities.
+        Surrounded by nature and powered by modern infrastructure, UNWH offers students a perfect
+        balance of academics, culture, sports and personal growth.
+    </p>
+</section>
+
+<!-- CAMPUS LIFE -->
+<section class="section container">
+<div class="section-title">
+<h2>Campus Life</h2>
+<p>A perfect blend of academics, nature & modern facilities</p>
+</div>
+
+<div class="row g-4">
+<div class="col-md-4">
+<div class="life-card">
+<img src="https://images.unsplash.com/photo-1622604647545-0cada2f34470?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHVuaXZlcnNpdHklMjBncm91bmR8ZW58MHx8MHx8fDA%3D">
+<div class="life-overlay">
+<h4>Green Campus</h4>
+<p>Peaceful & eco-friendly environment</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="life-card">
+<img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0">
+<div class="life-overlay">
+<h4>Smart Classrooms</h4>
+<p>Technology-enabled learning</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="life-card">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+<div class="life-overlay">
+<h4>Central Library</h4>
+<p>Knowledge hub for students</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section container">
+<div class="exp-box text-center">
+<h2 class="fw-bold text-primary mb-4">Beyond Academics</h2>
+<p>
+UNWH encourages students to explore their interests through cultural festivals,
+sports tournaments, technical clubs, workshops and social initiatives.
+These experiences help students build confidence, leadership skills and lifelong friendships.
+</p>
+</div>
+</section>
+
+<!-- VIBE -->
+<section class="container section">
+<div class="vibe">
+<h3>Fest • Sports • Culture • Innovation</h3>
+<p class="mt-3">
+Every day at UNWH is filled with energy, creativity and unforgettable moments
+that shape students both professionally and personally.
+</p>
+</div>
+</section>
+
+<!-- STUDENT VOICE -->
+<section class="section container">
+<div class="quote">
+<p>
+“Life at UNWH is not just about studying, it’s about discovering yourself.
+The campus atmosphere, events and friendships made my journey memorable.”
+</p>
+<h6 class="mt-4 fw-bold">— Student, UNWH Dehradun</h6>
+</div>
+</section>
+
+<footer>
+<p>© 2026 The University of North West Himalayas | UNWH</p>
+</footer>
+
+</body>
+</html>

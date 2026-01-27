@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Policy - UNwH Dehradun</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #004d99;
+            --primary-dark: #003366;
+            --accent: #00b894;
+            --light-bg: #f8f9fa;
+            --gray-light: #f0f4f8;
+            --text-dark: #212529;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gray-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: var(--primary) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 77, 153, 0.88), rgba(0, 77, 153, 0.78)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
+        }
+
+        .hero-section p.lead {
+            font-size: 1.6rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .policy-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .policy-content h3 {
+            color: var(--primary);
+            font-weight: 600;
+            margin: 2.5rem 0 1.2rem;
+            font-size: 1.6rem;
+        }
+
+        .policy-content p, .policy-content li {
+            font-size: 1.08rem;
+            color: #444;
+            margin-bottom: 1.2rem;
+        }
+
+        .policy-content ul, .policy-content ol {
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .cookie-types {
+            background: #e6f7ff;
+            border-left: 5px solid var(--accent);
+            padding: 1.8rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .cookie-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+
+        .cookie-table th, .cookie-table td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .cookie-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .cookie-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 992px) {
+            .hero-section { padding: 100px 0 70px; }
+            .hero-section h1 { font-size: 3.8rem; }
+            .policy-content { padding: 2.5rem 1.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section { padding: 80px 0 60px; }
+            .hero-section h1 { font-size: 3rem; }
+            .hero-section p.lead { font-size: 1.3rem; }
+            .section-title { font-size: 2.4rem; margin: 3.5rem 0 2rem; }
+            .policy-content { padding: 2rem 1.5rem; }
+            .cookie-table { font-size: 0.95rem; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section h1 { font-size: 2.6rem; }
+            .hero-section p.lead { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+            .policy-content h3 { font-size: 1.4rem; }
+            .policy-content p, .policy-content li { font-size: 1rem; }
+            .cookie-table th, .cookie-table td { padding: 0.8rem; }
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 5rem 0 3rem;
+            margin-top: 8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">UNwH Dehradun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contect.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Cookies Policy</h1>
+            <p class="lead">We use cookies and similar technologies to enhance your experience on our website, analyze usage, and provide personalized content. This policy explains what they are, how we use them, and your choices.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="policy-content">
+
+                <h3 class="mt-0">1. What Are Cookies?</h3>
+                <p>Cookies are small text files that are placed on your device (computer, mobile phone, tablet) when you visit a website. They are widely used to make websites work more efficiently, as well as to provide information to the site owners.</p>
+
+                <h3>2. Types of Cookies We Use</h3>
+                <div class="cookie-types">
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie Type</th>
+                                <th>Purpose</th>
+                                <th>Duration</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Essential / Strictly Necessary</strong></td>
+                                <td>Enable core website functionality like page navigation, secure login, form submission</td>
+                                <td>Session or persistent (up to 1 year)</td>
+                                <td>Session ID, authentication cookies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance / Analytics</strong></td>
+                                <td>Collect anonymous information about how visitors use the site (pages visited, time spent, errors)</td>
+                                <td>Persistent (up to 2 years)</td>
+                                <td>Google Analytics, Matomo cookies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Functional</strong></td>
+                                <td>Remember choices you make (language, region, preferences) to provide enhanced features</td>
+                                <td>Persistent (up to 1 year)</td>
+                                <td>Preferred language, dark mode setting</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Targeting / Advertising</strong></td>
+                                <td>Deliver relevant advertisements and measure ad effectiveness</td>
+                                <td>Persistent (up to 1 year)</td>
+                                <td>Remarketing pixels, social media trackers</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>3. Third-Party Cookies</h3>
+                <p>Some cookies are placed by third-party services that appear on our pages (e.g., YouTube videos, Google Maps, social media plugins, analytics tools). These third parties may use your data according to their own privacy policies.</p>
+
+                <h3>4. How to Manage Cookies</h3>
+                <p>You can control cookies through your browser settings:</p>
+                <ul>
+                    <li><strong>Block all cookies</strong> – May prevent some website features from working properly</li>
+                    <li><strong>Delete cookies</strong> – Removes stored information (you may need to log in again)</li>
+                    <li><strong>Manage specific cookies</strong> – Allow or block cookies from specific sites</li>
+                </ul>
+                <p>Most browsers allow you to:</p>
+                <ul>
+                    <li>View what cookies you have and delete them individually</li>
+                    <li>Block third-party cookies</li>
+                    <li>Block cookies from specific websites</li>
+                    <li>Block all cookies (may affect website functionality)</li>
+                </ul>
+
+                <h3>5. Cookie Consent</h3>
+                <p>When you first visit our website, you will see a cookie banner asking for your consent. You can:</p>
+                <ul>
+                    <li>Accept all cookies</li>
+                    <li>Customize your preferences</li>
+                    <li>Reject non-essential cookies</li>
+                </ul>
+                <p>You can change your consent at any time by clicking the "Cookie Settings" link in the footer.</p>
+
+                <h3>6. Changes to this Cookies Policy</h3>
+                <p>We may update this Cookies Policy from time to time. The updated version will be posted here with a revised "Last Updated" date. We recommend reviewing this page periodically.</p>
+
+                <h3>7. Contact Us</h3>
+                <p>If you have any questions about our use of cookies or this Cookies Policy, please contact:</p>
+                <p><strong>Email:</strong> privacy@unwh.edu.in<br>
+                <strong>Phone:</strong> +916396004079<br>
+                <strong>Address:</strong> The University of North West Himalayas, Village- Sangaon Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India</p>
+
+                <p class="text-center mt-5"><small>Last Updated: January 25, 2026</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h4 class="fw-bold mb-3">The University of North West Himalayas (UNwH)</h4>
+                    <p>Village- Sangaon Bhagwanpur, Dharkot Road, Thano<br>Dehradun – 248143, Uttarakhand, India</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-2"><strong>Contact:</strong> +916396004079 | Email: info@unwh.edu.in</p>
+                    <p>© 2026 UNwH Dehradun by IT Manger Shubham Kumar. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAAC Re-accreditation: A+ Grade Retained | UNWH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1d4ed8;
+            --primary-dark: #1e40af;
+            --light-bg: #f0f9ff;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(to bottom, var(--light-bg), #dbeafe);
+            color: #0f172a;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 18vh 5vw 12vh;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80') center/cover;
+            opacity: 0.18;
+            z-index: 0;
+        }
+        header > * { position: relative; z-index: 1; }
+        .container-fluid { max-width: 2000px; }
+        h1 { 
+            font-size: clamp(4.5rem, 10vw, 8rem); 
+            font-weight: 900; 
+            text-shadow: 0 8px 32px rgba(0,0,0,0.5); 
+            margin-bottom: 1rem;
+        }
+        h2 { font-size: clamp(3.5rem, 7vw, 5rem); font-weight: 800; }
+        .lead { font-size: clamp(1.8rem, 4vw, 2.6rem); opacity: 0.95; }
+        .accreditation-highlight {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 3rem;
+            padding: 10rem 8rem;
+            margin: -10rem auto 8rem;
+            max-width: 1600px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.18);
+        }
+        .big-grade {
+            font-size: clamp(8rem, 20vw, 14rem);
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 0.85;
+            text-shadow: 0 10px 30px rgba(29,78,216,0.35);
+        }
+        .stat-section { padding: 12rem 0; background: white; }
+        .stat-box {
+            background: linear-gradient(145deg, #eff6ff, #dbeafe);
+            border-radius: 2.5rem;
+            padding: 6rem 3rem;
+            box-shadow: 0 25px 70px rgba(29,78,216,0.15);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .stat-box:hover {
+            transform: translateY(-1.5rem) scale(1.03);
+            box-shadow: 0 50px 120px rgba(29,78,216,0.3);
+        }
+        .stat-number {
+            font-size: clamp(5rem, 12vw, 9rem);
+            font-weight: 900;
+            color: var(--primary);
+        }
+        .stat-label { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; color: #334155; margin-top: 2rem; }
+        .criteria-section { padding: 14rem 0; background: var(--light-bg); }
+        .criteria-card {
+            background: var(--card-bg);
+            border-radius: 2rem;
+            padding: 5rem 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+        .criteria-card:hover {
+            transform: translateY(-1rem);
+            box-shadow: 0 40px 100px rgba(29,78,216,0.25);
+        }
+        .criteria-icon { font-size: 5rem; color: var(--primary); margin-bottom: 2.5rem; }
+        .btn-detail {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary), #60a5fa);
+            border: none;
+            padding: 1.8rem 6rem;
+            font-size: 1.8rem;
+            border-radius: 4rem;
+            font-weight: 700;
+            box-shadow: 0 15px 40px rgba(29,78,216,0.4);
+            transition: all 0.4s;
+        }
+        .btn-detail:hover {
+            transform: translateY(-0.8rem);
+            box-shadow: 0 30px 80px rgba(29,78,216,0.6);
+        }
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #0f172a 100%);
+            color: white;
+            padding: 12rem 5vw;
+            text-align: center;
+            margin-top: 10rem;
+        }
+        @media (max-width: 992px) {
+            .accreditation-highlight { padding: 6rem 4rem; margin: -8rem auto 6rem; }
+            .criteria-card { padding: 4rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <h1>NAAC Re-accreditation</h1>
+            <h1 class="mt-3">A+ Grade Retained</h1>
+            <p class="lead mt-5">Continued Excellence • Outstanding Evaluation</p>
+        </div>
+    </header>
+
+    <div class="accreditation-highlight text-center">
+        <h2 class="mb-5">UNWH Retains Prestigious A+ Grade</h2>
+        <div class="big-grade">A+</div>
+        <p class="highlight-text fs-3 fw-bold text-primary mt-5 mb-5">
+            National Assessment and Accreditation Council (NAAC) ने The University of North West Himalayas को नवीनतम पुनर्मूल्यांकन में फिर से <strong>A+ ग्रेड</strong> प्रदान किया है।
+        </p>
+        <p class="highlight-text fs-4">
+            यह उपलब्धि हमारे अकादमिक उत्कृष्टता, उच्च-गुणवत्ता वाले शोध, आधुनिक इंफ्रास्ट्रक्चर, छात्र-केंद्रित शिक्षण, और पारदर्शी प्रशासन की निरंतर प्रतिबद्धता को प्रमाणित करती है। NAAC टीम ने सभी 7 मूल्यांकन मानदंडों में असाधारण प्रदर्शन दर्ज किया।
+        </p>
+    </div>
+
+    <section class="stat-section">
+        <div class="container-fluid">
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box text-center">
+                        <div class="stat-number">A+</div>
+                        <div class="stat-label">NAAC Grade</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box text-center">
+                        <div class="stat-number">3.62</div>
+                        <div class="stat-label">CGPA (4.0 में से)</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box text-center">
+                        <div class="stat-number">Top 15%</div>
+                        <div class="stat-label">Re-accredited Universities में</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box text-center">
+                        <div class="stat-number">7/7</div>
+                        <div class="stat-label">Criteria में उत्कृष्ट</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="criteria-section">
+        <div class="container-fluid">
+            <h2 class="text-center mb-5">NAAC द्वारा सराहे गए प्रमुख क्षेत्र</h2>
+            <div class="row g-5">
+                <div class="col-lg-4"><div class="criteria-card text-center">
+                    <i class="fas fa-book-open criteria-icon"></i>
+                    <h3>पाठ्यक्रम</h3>
+                    <p class="fs-4">उद्योग-उन्मुख, लचीला और परिणाम-आधारित पाठ्यक्रम</p>
+                </div></div>
+                <div class="col-lg-4"><div class="criteria-card text-center">
+                    <i class="fas fa-chalkboard-teacher criteria-icon"></i>
+                    <h3>शिक्षण-सीखना</h3>
+                    <p class="fs-4">नवाचारी शिक्षण विधियाँ और उत्कृष्ट मूल्यांकन</p>
+                </div></div>
+                <div class="col-lg-4"><div class="criteria-card text-center">
+                    <i class="fas fa-flask-vial criteria-icon"></i>
+                    <h3>शोध एवं नवाचार</h3>
+                    <p class="fs-4">उच्च प्रभाव वाले प्रकाशन, पेटेंट और फंडेड प्रोजेक्ट</p>
+                </div></div>
+                <div class="col-lg-4"><div class="criteria-card text-center">
+                    <i class="fas fa-university criteria-icon"></i>
+                    <h3>इंफ्रास्ट्रक्चर</h3>
+                    <p class="fs-4">आधुनिक लैब, स्मार्ट क्लासरूम और हरित कैंपस</p>
+                </div></div>
+                <div class="col-lg-4"><div class="criteria-card text-center">
+                    <i class="fas fa-user-graduate criteria-icon"></i>
+                    <h3>छात्र सहायता</h3>
+                    <p class="fs-4">उत्कृष्ट प्लेसमेंट, छात्रवृत्ति और मेंटरिंग</p>
+                </div></div>
+                <div class="col-lg-4"><div class="criteria-card text-center">
+                    <i class="fas fa-chart-line criteria-icon"></i>
+                    <h3>प्रशासन एवं नेतृत्व</h3>
+                    <p class="fs-4">पारदर्शी प्रबंधन और मजबूत IQAC सिस्टम</p>
+                </div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-center">
+        <a href="#" class="btn btn-detail">पूर्ण NAAC रिपोर्ट • प्रमाणपत्र • पीयर टीम फीडबैक देखें →</a>
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+            <p class="fs-3 mb-3">&copy; 2026 The University of North West Himalayas (UNWH) by IT Manager Shubham Kumar </p>
+            <p class="fs-4">NAAC A+ ग्रेड • हिमालय में निरंतर उत्कृष्टता</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

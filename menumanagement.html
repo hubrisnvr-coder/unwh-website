@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Studies | UNWH University</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --unwh-blue: #002147;
+            --unwh-orange: #f15a22;
+            --bg-light: #f8f9fa;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff; color: #333; }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb-section { background: var(--bg-light); padding: 12px 0; border-bottom: 1px solid #eee; }
+        .breadcrumb { margin: 0; font-size: 13px; }
+        .breadcrumb-item a { color: var(--unwh-blue); text-decoration: none; }
+
+        /* --- HERO BANNER (Management & Global Touch) --- */
+        .hero-banner {
+            background: linear-gradient(rgba(0,33,71,0.7), rgba(0,33,71,0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 90px 0;
+            text-align: center;
+        }
+        .hero-banner h1 { font-size: 3.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-banner p { font-size: 1.2rem; max-width: 800px; margin: 15px auto; opacity: 0.9; }
+
+        /* --- MAIN CONTENT --- */
+        .section-heading { 
+            color: var(--unwh-blue); 
+            font-weight: 700; 
+            border-left: 5px solid var(--unwh-orange); 
+            padding-left: 15px; 
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+        .intro-text p { line-height: 1.8; font-size: 16px; color: #555; text-align: justify; }
+
+        /* --- SPECIALIZATION CARDS --- */
+        .spec-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+            text-align: center;
+            height: 100%;
+        }
+        .spec-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-top: 4px solid var(--unwh-orange);
+        }
+        .spec-card i { font-size: 35px; color: var(--unwh-blue); margin-bottom: 15px; }
+        .spec-card h4 { font-size: 18px; font-weight: 700; color: var(--unwh-blue); }
+
+        /* --- ENQUIRY SIDEBAR --- */
+        .enquiry-card {
+            background: var(--unwh-blue);
+            padding: 30px;
+            border-radius: 12px;
+            color: white;
+            position: sticky;
+            top: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        .enquiry-card h3 { font-size: 22px; margin-bottom: 20px; font-weight: 700; border-bottom: 2px solid var(--unwh-orange); padding-bottom: 10px; }
+        .form-control { margin-bottom: 15px; padding: 12px; border: none; border-radius: 5px; }
+        .btn-submit { background: var(--unwh-orange); color: white; width: 100%; padding: 12px; font-weight: 700; border: none; border-radius: 5px; transition: 0.3s; }
+        .btn-submit:hover { background: #d44d1c; }
+
+        /* --- PROGRAM ACCORDIAN STYLE --- */
+        .prog-item {
+            background: var(--bg-light);
+            padding: 18px 25px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--unwh-blue);
+            border-right: 4px solid transparent;
+            transition: 0.3s;
+        }
+        .prog-item:hover {
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-right-color: var(--unwh-orange);
+            padding-left: 35px;
+        }
+        .prog-item i { margin-right: 15px; color: var(--unwh-orange); }
+
+        /* --- STATS STRIP --- */
+        .stats-strip {
+            background: #001a38;
+            color: white;
+            padding: 40px 0;
+            margin: 50px 0;
+            border-radius: 15px;
+        }
+        .stat-val { font-size: 30px; font-weight: 800; color: var(--unwh-orange); }
+
+        @media (max-width: 991px) {
+            .hero-banner h1 { font-size: 2.2rem; }
+            .enquiry-card { margin-top: 40px; position: relative; }
+        }
+        /* yanha se start hai footer wali css  */
+/* ================= FOOTER MAIN ================= */
+.university-footer {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+}
+
+/* ================= GRID ================= */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* ================= LEFT BLOCK ================= */
+.logo-contact {
+    background: #003366;
+    padding: 25px 30px 40px 30px; /* overall padding */
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-box {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-bottom: 20px;
+    margin-left: 0;    
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+    margin-bottom: 20px;
+    margin-top: -35px; /* address, email, phone thoda upar logo ke neeche */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+/* ================= FOOTER COLUMNS ================= */
+.footer-column:not(.logo-contact) {
+    padding-top: 80px; /* columns thoda neeche logo ke samne */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    background: #d65713;
+    margin-top: 8px;
+}
+
+/* ================= LINKS ================= */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    position: relative;
+    font-size: 15px;
+    color: #8cc63e;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.footer-column ul li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    color: #f15a22;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #f15a22;
+    transform: scale(1.05);
+    padding-left: 24px;
+}
+
+.footer-column ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-column ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-column ul li a:visited {
+    color: inherit;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons-small {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons-small a {
+    color: #f37142;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-small a:hover {
+    transform: scale(1.2);
+}
+
+/* ================= BOTTOM BAR ================= */
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+    
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-contact {
+        grid-column: 1 / -1;
+        border-radius: 12px;
+        padding: 25px 30px 40px 30px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 40px;
+    }
+
+    .footer-logo {
+        max-width: 260px;
+        margin-top: 0px; /* responsive logo bas bahut thoda upar */
+    }
+
+    .contact-info {
+        margin-top: -30px; /* responsive contact info upar logo ke neeche */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        max-width: 220px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 30px;
+    }
+
+    .contact-info {
+        margin-top: -30px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Management Studies</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="hero-banner">
+        <div class="container">
+            <h1>School of Management</h1>
+            <p>Developing Global Leaders for the Modern Business World at UNWH.</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="section-heading">Lead, Innovate & Transform</h2>
+                <div class="intro-text">
+                    <p>The Department of Management Studies at UNWH is renowned for its excellence in business education. Our programs are designed to provide a deep understanding of market dynamics, leadership strategies, and entrepreneurial skills.</p>
+                    <p>With a focus on case-study based learning, corporate interactions, and global internship opportunities, we prepare students to excel in top-tier multinational companies or launch their own successful ventures.</p>
+                </div>
+
+                <div class="stats-strip text-center">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="stat-val">500+</div>
+                            <small>Corporate Partners</small>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-val">100%</div>
+                            <small>Placement Support</small>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-val">25 LPA</div>
+                            <small>Highest Package</small>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="section-heading">Core Specializations</h3>
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="spec-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Finance</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="spec-card">
+                            <i class="fas fa-bullhorn"></i>
+                            <h4>Marketing</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="spec-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Human Resource</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="section-heading">Programs Offered</h3>
+                <div class="prog-item"><i class="fas fa-check-circle"></i> Master of Business Administration (MBA)</div>
+                <div class="prog-item"><i class="fas fa-check-circle"></i> Bachelor of Business Administration (BBA)</div>
+                <div class="prog-item"><i class="fas fa-check-circle"></i> BBA in Digital Marketing</div>
+                <div class="prog-item"><i class="fas fa-check-circle"></i> BBA in Banking & Insurance</div>
+                <div class="prog-item"><i class="fas fa-check-circle"></i> MBA in Business Analytics</div>
+                <div class="prog-item"><i class="fas fa-check-circle"></i> Ph.D. in Management Studies</div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="enquiry-card">
+                    <h3>Admission Enquiry</h3>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Student Name" required>
+                        <input type="email" class="form-control" placeholder="Email ID" required>
+                        <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                        <select class="form-select mb-3 form-control">
+                            <option selected>Select Program</option>
+                            <option>MBA</option>
+                            <option>BBA</option>
+                            <option>Ph.D.</option>
+                        </select>
+                        <button type="submit" class="btn-submit">ENQUIRE NOW</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL--- yanha se start hai footer wala porsen  -->
+ <footer class="university-footer">
+    <div class="footer-container">
+
+        <!-- Left Column - Logo & Contact -->
+        <div class="footer-column logo-contact">
+            <div class="logo-box">
+                <img src="logo.png" alt="UNWH Logo" class="footer-logo">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    Village- Sangaon, Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    info1UNWH@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    +916396004079 (Enquiry for D.H.M., B.H.M., M.B.A)
+                </div>
+            </div>
+
+            <div class="social-icons-small">
+                <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/twitt_login?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=md4oOsCbkO4"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>About <span class="underline"></span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="footerapprovel.html">Approvals & Affiliations</a></li>
+                <li><a href="footerchancellorandvcmassege.html">Messages From Chancellor & VC</a></li>
+                <li><a href="footermission&core.html">Mission & Core</a></li>
+                <li><a href="footerachievements.html">Achievements</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="footerstructure 2025-26.html">Structure 2025-26</a></li>
+            </ul>
+        </div>
+
+        <!-- Academic -->
+        <div class="footer-column">
+            <h3>Academic <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerfacultyofmanagementandcommerce.html">Faculty Of Management And Commerce</a></li>
+                <li><a href="footerfacultyofcomputerapplicationandengineering.html">Faculty Of Computer Application And Engineering</a></li>
+                <li><a href="footerfacultyofhumanities.html">Faculty Of Humanities</a></li>
+                <li><a href="footerfacultyofhotelmanagement.html">Faculty Of Hotel Management</a></li>
+                <li><a href="footerfacultyofyogicscience.html">Faculty Of Yogic Science</a></li>
+                <li><a href="footerfacultyofscience&paramedicalscience.html">Faculty Of Science & Paramedical Science</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links <span class="underline"></span></h3>
+            <ul>
+                <li><a href="gallery.html">Infrastructure</a></li>
+                <li><a href="https://www.youtube.com/watch?v=md4oOsCbkO4">Virtual Tour</a></li>
+                <li><a href="lifeatunwh.html">Students Life</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+            <h3>Resources <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerprivacypolicy.html">Privacy Policy</a></li>
+                <li><a href="footercookiespolicy.html">Cookies Policy</a></li>
+                <li><a href="footerterms&conditions.html">Terms & Conditions</a></li>
+                <li><a href="footerterms&conditions.html">Refund / Cancellation Policy</a></li>
+                <li><a href="adminpannel.html">Admin Panel</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="copyright">
+                Copyright © 2025 UNWH by IT Manager Shubham Kumar
+            </div>
+            <div class="bottom-contact">
+                <span class="phone-icon">📞</span>
+                +9199927999508 · +916396004079
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

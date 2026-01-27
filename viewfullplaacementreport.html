@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Industry Partners & Placements - The University of North West Himalayas (UNWH)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f0f7ff, #e0eaff);
+            color: #0f172a;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            padding: 140px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            opacity: 0.18;
+        }
+        .container-fluid {
+            max-width: 1800px;
+        }
+        h1 { font-size: 5rem; font-weight: 900; text-shadow: 3px 3px 10px rgba(0,0,0,0.5); }
+        h2 { font-size: 3.8rem; font-weight: 800; }
+        .lead { font-size: 1.8rem; }
+        .partners-section {
+            padding: 150px 0 120px;
+            background: white;
+        }
+        .partner-card {
+            background: linear-gradient(145deg, #ffffff, #f8faff);
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            padding: 50px 30px;
+            margin: 25px;
+            text-align: center;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .partner-card:hover {
+            transform: translateY(-25px) scale(1.05);
+            box-shadow: 0 40px 80px rgba(29,78,216,0.25);
+        }
+        .partner-logo {
+            width: 220px;
+            height: 120px;
+            object-fit: contain;
+            transition: all 0.5s ease;
+            filter: grayscale(70%) brightness(90%);
+        }
+        .partner-card:hover .partner-logo {
+            transform: scale(1.2);
+            filter: grayscale(0%) brightness(100%);
+        }
+        .stats-section {
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+            color: white;
+            padding: 140px 0;
+            text-align: center;
+        }
+        .stat-box {
+            background: rgba(255,255,255,0.18);
+            border-radius: 30px;
+            padding: 70px 40px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: all 0.4s ease;
+        }
+        .stat-box:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-10px);
+        }
+        .stat-number {
+            font-size: 7rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+        }
+        .stat-text {
+            font-size: 2rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+        .placement-highlights {
+            padding: 120px 0;
+            background: #f8fafc;
+        }
+        .highlight-card {
+            background: white;
+            border-radius: 35px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+            padding: 90px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .highlight-card h2 {
+            font-size: 4.5rem;
+            color: #1d4ed8;
+            margin-bottom: 50px;
+        }
+        .highlight-stats {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #dc2626;
+            margin: 40px 0;
+            line-height: 1.4;
+        }
+        .description-text {
+            font-size: 1.5rem;
+            line-height: 2;
+            color: #334155;
+            margin: 50px 0;
+        }
+        .view-report-btn {
+            display: inline-block;
+            margin-top: 60px;
+            padding: 22px 70px;
+            background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+            color: white;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(29,78,216,0.3);
+        }
+        .view-report-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(29,78,216,0.5);
+            background: linear-gradient(90deg, #1e40af, #2563eb);
+        }
+        footer {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-top: 120px;
+        }
+        @media (max-width: 1200px) {
+            h1 { font-size: 4rem; }
+            .stat-number { font-size: 5.5rem; }
+        }
+        @media (max-width: 768px) {
+            .partner-logo { width: 160px; height: 90px; }
+            .stat-number { font-size: 5rem; }
+            .highlight-card { padding: 60px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <h1>Industry Partnerships & Stellar Placements</h1>
+            <p class="lead mt-4">Bridging Himalayan Talent with Global Opportunities at UNWH</p>
+        </div>
+    </header>
+
+    <section class="partners-section">
+        <div class="container-fluid">
+            <h2 class="text-center mb-5 pb-4">Our Esteemed Industry Partners & Top Recruiters</h2>
+            <div class="row justify-content-center g-5">
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="Microsoft" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://images.unsplash.com/photo-1678483790053-71367bc7a02c?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Google logo images " class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://images.unsplash.com/photo-1680782341949-c304e09afc3b?q=80&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Deloitte" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="data:image/png;base64,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" alt="TCS" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/2560px-Infosys_logo.svg.png" alt="Infosys" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png" alt="IBM" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Accenture.svg/2560px-Accenture.svg.png" alt="Accenture" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cognizant_logo.svg/2560px-Cognizant_logo.svg.png" alt="Cognizant" class="partner-logo"></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="partner-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Capgemini_logo.svg/2560px-Capgemini_logo.svg.png" alt="Capgemini" class="partner-logo"></div>
+                </div>
+            </div>
+            <p class="text-center mt-5 fs-4 text-muted">And many more leading global corporations trust UNWH talent year after year</p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container-fluid">
+            <div class="row justify-content-center g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-box">
+                        <div class="stat-number">95<span style="font-size:5rem;">%</span>+</div>
+                        <div class="stat-text">Consistent Placement Rate</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-box">
+                        <div class="stat-number">1.2 <span style="font-size:4rem;">Cr</span></div>
+                        <div class="stat-text">Highest Package Offered</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="stat-box">
+                        <div class="stat-number">18-22 <span style="font-size:4rem;">LPA</span></div>
+                        <div class="stat-text">Average Package</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="placement-highlights">
+        <div class="container-fluid">
+            <div class="highlight-card">
+                <h2>Remarkable Placement Success at UNWH</h2>
+                <p class="description-text">
+                    At The University of North West Himalayas, we don't just educate — we launch careers into the stratosphere. Our dedicated placement cell works tirelessly throughout the year, organizing pre-placement training, mock interviews, aptitude sessions, personality development workshops, and industry interactions to ensure every student is placement-ready.
+                </p>
+                <p class="description-text">
+                    With deep-rooted collaborations with Fortune 500 companies, emerging startups, and leading Indian conglomerates, our graduates consistently secure dream roles in software development, data science, consulting, product management, core engineering, finance, and more. Our alumni are now powering innovation at top global firms, proving the UNWH edge in transforming potential into performance.
+                </p>
+                <p class="description-text">
+                    Year after year, we achieve near-perfect placement rates, with multiple students receiving international offers and packages that rank among the best in the region. Our focus on holistic development, technical excellence, and soft skills ensures that UNWH graduates are not just employable — they are highly sought-after leaders of tomorrow.
+                </p>
+                <div class="highlight-stats">
+                    95%+ Placement Rate Year-on-Year<br>
+                    Highest Domestic Package: ₹1.2 Crore<br>
+                    Highest International Package: ₹2 Crore+<br>
+                    Average CTC: ₹18-22 LPA<br>
+                    500+ Companies Visit Campus Annually
+                </div>
+                <a href="#" class="view-report-btn">Explore Full Placement Report & Success Stories →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+            <p class="mb-3 fs-4">&copy; 2026 The University of North West Himalayas (UNWH) by IT Manager Shubham Kumar. Empowering Futures from the Himalayas.</p>
+            <p class="fs-5">Dehradun, Thano, Uttarakhand | Where Excellence Meets Opportunity</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

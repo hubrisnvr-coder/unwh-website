@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - UNwH Dehradun</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #004d99;
+            --primary-dark: #003366;
+            --accent: #00b894;
+            --light-bg: #f0f4f8;
+            --dark: #212529;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 85vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 77, 153, 0.78), rgba(0, 77, 153, 0.68)),
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .hero-content { max-width: 90%; }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.2rem;
+            font-weight: 700;
+            text-shadow: 5px 5px 25px rgba(0,0,0,0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        .hero-content .lead { font-size: 2rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); }
+
+        @media (max-width: 992px) { .hero-section { height: 70vh; min-height: 450px; } .hero-content h1 { font-size: 3.8rem; } .hero-content .lead { font-size: 1.5rem; } }
+        @media (max-width: 768px) { .hero-section { height: 60vh; min-height: 400px; background-attachment: scroll; } .hero-content h1 { font-size: 2.8rem; } .hero-content .lead { font-size: 1.3rem; } }
+        @media (max-width: 576px) { .hero-content h1 { font-size: 2.4rem; } .hero-content .lead { font-size: 1.1rem; } }
+
+        .career-category {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            margin-bottom: 5rem;
+            transition: all 0.4s ease;
+        }
+
+        .career-category:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 35px 90px rgba(0,0,0,0.22);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 3rem 2.5rem;
+            text-align: center;
+        }
+
+        .category-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .category-header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        .vacancy-list {
+            padding: 3rem 2.5rem;
+        }
+
+        .vacancy-item {
+            display: flex;
+            align-items: center;
+            padding: 1.8rem;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .vacancy-item:last-child {
+            border-bottom: none;
+        }
+
+        .vacancy-item:hover {
+            background: #f0f9ff;
+            transform: translateX(12px);
+        }
+
+        .vacancy-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-right: 2rem;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .vacancy-details h4 {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 0 0 0.6rem;
+            font-size: 1.7rem;
+        }
+
+        .vacancy-details p {
+            margin: 0;
+            color: #444;
+            font-size: 1.15rem;
+        }
+
+        .apply-badge {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-left: auto;
+            white-space: nowrap;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .apply-form-section {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            padding: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-dark);
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .btn-submit {
+            background: var(--accent);
+            border: none;
+            font-weight: 600;
+            padding: 0.8rem 3rem;
+            font-size: 1.2rem;
+        }
+
+        #success-message {
+            display: none;
+            margin-top: 2.5rem;
+        }
+
+        .success-alert {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 1.8rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .vacancy-item { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 1.8rem 1rem; 
+            }
+            .vacancy-icon { 
+                margin: 0 0 1.2rem 0; 
+                font-size: 3.2rem; 
+            }
+            .apply-badge { 
+                margin-top: 1rem; 
+                display: block; 
+                text-align: center; 
+                width: 140px; 
+                margin-left: auto; 
+                margin-right: auto; 
+            }
+            .form-header h2 { font-size: 2.5rem; }
+            .apply-form-section { padding: 2rem 1.5rem; }
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 5rem 0 3rem;
+            margin-top: 8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">UNwH Dehradun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="program.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footerapprovel.html">Approvals & Affiliations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footerchancellorandvcmassege.html">Leadership Messages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footermission&core.html">Mission & Core Values</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footerachievements.html">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="career.html">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contect.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Careers at UNwH</h1>
+            <p class="lead">Join Our Growing Academic Family | Multiple Faculty & Administrative Openings | Shape Tomorrow's Leaders</p>
+            <span class="badge bg-accent fs-4 px-5 py-3 mt-4">Current Openings 2025-26</span>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+
+            <!-- 1. Management & Commerce -->
+            <div class="career-category mb-5">
+                <div class="category-header">
+                    <h2>Management & Commerce Department</h2>
+                    <p>Available Vacancies</p>
+                </div>
+                <div class="vacancy-list">
+                    <div class="vacancy-item">
+                        <i class="fas fa-briefcase vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Assistant Professor - Business Administration</h4>
+                            <p>Qualification: Ph.D. in Management | Experience: 3+ Years | Salary: As per UGC Norms</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-chart-line vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Lecturer - Commerce & Finance</h4>
+                            <p>Qualification: M.Com/Ph.D. | Experience: 2+ Years | Salary: Competitive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-users vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Placement Coordinator - Management</h4>
+                            <p>Qualification: MBA | Experience: 3+ Years | Salary: Attractive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Computer Applications & IT / Engineering -->
+            <div class="career-category mb-5">
+                <div class="category-header">
+                    <h2>Computer Applications, IT & Engineering Department</h2>
+                    <p>Available Vacancies</p>
+                </div>
+                <div class="vacancy-list">
+                    <div class="vacancy-item">
+                        <i class="fas fa-laptop-code vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Professor - Computer Science</h4>
+                            <p>Qualification: Ph.D. in CSE | Experience: 10+ Years | Salary: UGC Scale</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-robot vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Assistant Professor - AI & Data Science</h4>
+                            <p>Qualification: M.Tech/Ph.D. | Experience: 5+ Years | Salary: Competitive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-brain vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Lecturer - Information Technology</h4>
+                            <p>Qualification: MCA/Ph.D. | Experience: 2+ Years | Salary: As per Norms</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Arts & Humanities / Social Sciences -->
+            <div class="career-category mb-5">
+                <div class="category-header">
+                    <h2>Arts, Humanities & Social Sciences Department</h2>
+                    <p>Available Vacancies</p>
+                </div>
+                <div class="vacancy-list">
+                    <div class="vacancy-item">
+                        <i class="fas fa-book-open vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Associate Professor - Psychology</h4>
+                            <p>Qualification: Ph.D. | Experience: 7+ Years | Salary: UGC Scale</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-scroll vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Lecturer - English Literature</h4>
+                            <p>Qualification: MA/Ph.D. | Experience: 2+ Years | Salary: Attractive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-users vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Assistant Professor - Sociology</h4>
+                            <p>Qualification: Ph.D. | Experience: 3+ Years | Salary: Competitive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Sciences & Agriculture -->
+            <div class="career-category mb-5">
+                <div class="category-header">
+                    <h2>Sciences & Agriculture Department</h2>
+                    <p>Available Vacancies</p>
+                </div>
+                <div class="vacancy-list">
+                    <div class="vacancy-item">
+                        <i class="fas fa-flask vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Assistant Professor - Agriculture</h4>
+                            <p>Qualification: M.Sc/Ph.D. in Agronomy | Experience: 3+ Years | Salary: Competitive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-seedling vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Lecturer - Biological Sciences</h4>
+                            <p>Qualification: M.Sc/Ph.D. | Experience: 2+ Years | Salary: As per Norms</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-dna vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Lab Technician - Agriculture</h4>
+                            <p>Qualification: B.Sc. | Experience: 1+ Year | Salary: Competitive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Nursing & Health Sciences -->
+            <div class="career-category mb-5">
+                <div class="category-header">
+                    <h2>Nursing & Health Sciences Department</h2>
+                    <p>Available Vacancies</p>
+                </div>
+                <div class="vacancy-list">
+                    <div class="vacancy-item">
+                        <i class="fas fa-stethoscope vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Professor - Nursing</h4>
+                            <p>Qualification: Ph.D. in Nursing | Experience: 10+ Years | Salary: UGC Scale</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-laptop-medical vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Assistant Professor - Health Sciences</h4>
+                            <p>Qualification: M.Sc/Ph.D. | Experience: 5+ Years | Salary: Competitive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-user-nurse vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Clinical Instructor - Nursing</h4>
+                            <p>Qualification: M.Sc Nursing | Experience: 2+ Years | Salary: As per Norms</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Diploma & Certificate -->
+            <div class="career-category">
+                <div class="category-header">
+                    <h2>Diploma & Certificate Programs Department</h2>
+                    <p>Available Vacancies</p>
+                </div>
+                <div class="vacancy-list">
+                    <div class="vacancy-item">
+                        <i class="fas fa-tools vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Lecturer - Organic Farming</h4>
+                            <p>Qualification: M.Sc in Agriculture | Experience: 3+ Years | Salary: Attractive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-mountain-sun vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Instructor - Tourism & Hospitality</h4>
+                            <p>Qualification: Degree in Tourism | Experience: 2+ Years | Salary: Competitive</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                    <div class="vacancy-item">
+                        <i class="fas fa-certificate vacancy-icon"></i>
+                        <div class="vacancy-details">
+                            <h4>Skill Trainer - Digital Health</h4>
+                            <p>Qualification: Relevant Degree | Experience: 1+ Year | Salary: As per Norms</p>
+                        </div>
+                        <a href="#apply-form" class="apply-badge">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Form -->
+            <div class="apply-form-section" id="apply-form">
+                <div class="form-header">
+                    <h2>Application Form</h2>
+                    <p>Fill the details to apply. We will get back to you soon.</p>
+                </div>
+
+                <form id="career-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="position" class="form-label">Position Applying For *</label>
+                            <select class="form-select" id="position" required>
+                                <option value="">Select Position</option>
+                                <option value="Professor">Professor</option>
+                                <option value="Associate Professor">Associate Professor</option>
+                                <option value="Assistant Professor">Assistant Professor</option>
+                                <option value="Lecturer">Lecturer / Guest Faculty</option>
+                                <option value="Registrar">Registrar</option>
+                                <option value="Deputy Registrar">Deputy Registrar</option>
+                                <option value="Controller of Examinations">Controller of Examinations</option>
+                                <option value="Librarian">Librarian</option>
+                                <option value="Assistant Librarian">Assistant Librarian</option>
+                                <option value="Lab Technician">Lab Technician</option>
+                                <option value="Lab Assistant">Lab Assistant</option>
+                                <option value="Accountant">Accountant</option>
+                                <option value="Office Assistant">Office Assistant / Clerk</option>
+                                <option value="Admission Counselor">Admission Counselor</option>
+                                <option value="HR Assistant">HR Assistant</option>
+                                <option value="IT Support">IT Support / System Admin</option>
+                                <option value="Security Supervisor">Security Supervisor</option>
+                                <option value="Housekeeping Staff">Housekeeping / Maintenance Staff</option>
+                                <option value="Transport Driver">Transport Driver / Supervisor</option>
+                                <option value="Mess Supervisor">Mess Supervisor / Cook</option>
+                                <option value="Student Welfare Officer">Student Welfare Officer</option>
+                                <option value="Exam Section Assistant">Exam Section Assistant</option>
+                                <option value="Placement Coordinator">Placement Coordinator</option>
+                                <option value="Public Relations Officer">Public Relations / Media Officer</option>
+                                <option value="Sports Coach">Sports Coach / Physical Education Instructor</option>
+                                <option value="Counselor">Student Counselor</option>
+                                <option value="Technical Officer">Technical Officer</option>
+                                <option value="Data Entry Operator">Data Entry Operator</option>
+                                <option value="Receptionist">Receptionist / Front Desk</option>
+                                <option value="Electrician">Electrician / Maintenance Technician</option>
+                                <option value="Other">Other (Specify in cover letter)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="qualification" class="form-label">Highest Qualification *</label>
+                            <input type="text" class="form-control" id="qualification" placeholder="e.g., Ph.D. in Management, NET qualified" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="experience" class="form-label">Total Years of Experience *</label>
+                            <input type="number" class="form-control" id="experience" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="resume" class="form-label">Upload Resume / CV * (PDF/DOC/DOCX)</label>
+                        <input type="file" class="form-control" id="resume" accept=".pdf,.doc,.docx" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cover-letter" class="form-label">Cover Letter / Additional Information *</label>
+                        <textarea class="form-control" id="cover-letter" rows="5" required placeholder="Why do you want to join UNwH? Mention your achievements, teaching philosophy (for faculty), or relevant experience..."></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-submit btn-lg px-5">Submit Application</button>
+                    </div>
+                </form>
+
+                <div id="success-message" class="success-alert">
+                    <h4>Application Submitted Successfully!</h4>
+                    <p>Thank you for applying to UNwH Dehradun. Your application has been received. Our recruitment team will review it and get in touch if your profile matches our requirements.</p>
+                    <p class="mt-3">Best of luck!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h4 class="fw-bold mb-3">The University of North West Himalayas (UNwH)</h4>
+                    <p>Village- Sangaon Bhagwanpur, Dharkot Road, Thano<br>Dehradun – 248143, Uttarakhand, India</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-2"><strong>Careers Helpline:</strong> +91-XXX-XXXXXXX | Email: careers@unwh.edu.in</p>
+                    <p>&copy; 2026 UNwH Dehradun by IT Manager Shubham Kumar. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('career-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            document.getElementById('success-message').style.display = 'block';
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('success-message').style.display = 'none';
+            }, 10000);
+        });
+    </script>
+</body>
+</html>

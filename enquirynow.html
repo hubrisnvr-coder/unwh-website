@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Now - Unwh Dehradun</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #a5d6a7 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .navbar {
+            background: linear-gradient(90deg, #004d40 0%, #00796b 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 77, 64, 0.75), rgba(0, 121, 107, 0.75)), url('https://images.unsplash.com/photo-1580130718646-9f694209b207?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 90px;
+            text-align: center;
+        }
+        .enquiry-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            padding: 50px 60px;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+        }
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-control, .form-select {
+            border-radius: 12px;
+            padding: 14px 20px;
+            border: 2px solid #e0f2f1;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #00796b;
+            box-shadow: 0 0 0 0.25rem rgba(0, 121, 107, 0.25);
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #004d40 0%, #00796b 100%);
+            border: none;
+            padding: 15px 50px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 121, 107, 0.4);
+        }
+        .input-group-text {
+            border-radius: 12px 0 0 12px;
+            background: #e0f2f1;
+            color: #00796b;
+            font-size: 1.1rem;
+        }
+        footer {
+            background: #004d40;
+            color: white;
+            padding: 40px 0;
+            margin-top: 120px;
+            font-size: 1.1rem;
+        }
+        h1, h2 {
+            font-weight: 700;
+        }
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">The University of North west of himalyas dehradun (Unwh)</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="applynow.html">Apply Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contect.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Enquiry Now @ Unwh</h1>
+            <p class="lead fs-3 mt-3">Discover your future in the lap of Himalayas – Excellence in Education, Innovation & Career Growth</p>
+        </div>
+    </section>
+
+    <!-- Enquiry Form -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-8">
+                <div class="enquiry-card">
+                    <h2 class="text-center mb-5" style="color: #00796b; font-size: 2.5rem;">Submit Your Detailed Enquiry</h2>
+                    <form id="enquiryForm">
+                        <div class="row g-4">
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control" placeholder="your@email.com" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" class="form-control" placeholder="10-digit mobile number" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">City / State <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                    <input type="text" class="form-control" placeholder="e.g. Agra, Uttar Pradesh" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">12th Percentage / Year (if applicable)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-percentage"></i></span>
+                                    <input type="text" class="form-control" placeholder="e.g. 85% in 2024">
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label class="form-label">Interested Program <span class="text-danger">*</span></label>
+                                <select class="form-select" required>
+                                    <option value="">Select Program</option>
+                                    <optgroup label="Management & Commerce">
+                                        <option>BBA - Bachelor of Business Administration</option>
+                                        <option>B.Com - Bachelor of Commerce</option>
+                                        <option>MBA - Master of Business Administration</option>
+                                        <option>M.Com - Master of Commerce</option>
+                                    </optgroup>
+                                    <optgroup label="Computer Applications & IT">
+                                        <option>BCA - Bachelor of Computer Applications</option>
+                                        <option>MCA - Master of Computer Applications</option>
+                                        <option>B.Tech - Computer Science & Engineering</option>
+                                        <option>B.Tech - Artificial Intelligence & Machine Learning</option>
+                                        <option>B.Tech - Data Science</option>
+                                        <option>B.Tech - Cyber Security</option>
+                                    </optgroup>
+                                    <optgroup label="Engineering & Technology">
+                                        <option>B.Tech - Electronics & Communication Engineering</option>
+                                        <option>B.Tech - Mechanical Engineering</option>
+                                        <option>B.Tech - Civil Engineering</option>
+                                        <option>B.Tech - Electrical Engineering</option>
+                                    </optgroup>
+                                    <optgroup label="Arts & Humanities">
+                                        <option>BA - Psychology</option>
+                                        <option>BA - English</option>
+                                        <option>BA - History</option>
+                                        <option>BA - Political Science</option>
+                                        <option>BA - Economics / Sociology / Geography</option>
+                                    </optgroup>
+                                    <optgroup label="Sciences & Agriculture">
+                                        <option>B.Sc - Physics / Chemistry / Maths</option>
+                                        <option>B.Sc - Zoology / Botany</option>
+                                        <option>B.Sc Agriculture</option>
+                                        <option>B.Sc Forestry</option>
+                                    </optgroup>
+                                    <optgroup label="Health & Paramedical">
+                                        <option>BMLT - Bachelor of Medical Laboratory Technology</option>
+                                        <option>BPT - Bachelor of Physiotherapy</option>
+                                        <option>B.Sc Nursing</option>
+                                    </optgroup>
+                                    <optgroup label="Hospitality & Tourism">
+                                        <option>BHM - Bachelor of Hotel Management</option>
+                                        <option>BTTM - Bachelor of Travel & Tourism Management</option>
+                                    </optgroup>
+                                    <optgroup label="Education & Others">
+                                        <option>B.Ed - Bachelor of Education</option>
+                                        <option>M.Ed - Master of Education</option>
+                                        <option>Other (Specify in message)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label class="form-label">Your Detailed Query / Message <span class="text-danger">*</span></label>
+                            <textarea class="form-control" rows="6" placeholder="Tell us about your interests, admission questions, course details, fees, scholarships, hostel facilities, placements, or any other query..." required></textarea>
+                        </div>
+                        <div class="text-center mt-5">
+                            <button type="submit" class="btn btn-primary btn-lg px-5 py-3">
+                                <i class="fas fa-paper-plane me-3"></i> Submit Your Enquiry
+                            </button>
+                        </div>
+                    </form>
+                    <div id="successMessage" class="alert alert-success mt-5 d-none text-center fw-bold fs-5">
+                        <i class="fas fa-check-circle me-3 fs-4"></i> Thank You! Your enquiry has been submitted successfully. UNwH Admission Team will get in touch with you shortly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Clean version - no address, no website, no helpline) -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 The University of North West Himalayas (UNwH) by IT Manager Shubham Kumar, Dehradun. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS + Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successMessage').classList.remove('d-none');
+            this.reset();
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.add('d-none');
+            }, 7000);
+        });
+    </script>
+</body>
+</html>

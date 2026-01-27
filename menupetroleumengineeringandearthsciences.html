@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petroleum Engineering & Earth Sciences | UNWH University</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --unwh-blue: #002147;
+            --unwh-orange: #f15a22;
+            --dark-grey: #343a40;
+            --light-grey: #f8f9fa;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff; color: var(--dark-grey); }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb-section { background: var(--light-grey); padding: 12px 0; border-bottom: 1px solid #eee; }
+        .breadcrumb { margin: 0; font-size: 13px; }
+        .breadcrumb-item a { color: var(--unwh-blue); text-decoration: none; }
+
+        /* --- HEADER BANNER (New - Himalayas Touch) --- */
+        .hero-banner {
+            background: linear-gradient(rgba(0,33,71,0.7), rgba(241,90,34,0.5)), url('https://via.placeholder.com/1920x400/002147/ffffff?text=Himalayas+%2B+UNWH+Petroleum') no-repeat center center/cover; /* Placeholder image, replace with actual Himalayas + UNWH touch image */
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .hero-banner h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .hero-banner p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+        /* Optional: Add a subtle UNWH logo watermark or graphic in the banner */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px; /* Adjust size */
+            height: 120px; /* Adjust size */
+            background: url('https://via.placeholder.com/120x120/f15a22/ffffff?text=UNWH+Logo') no-repeat center center/contain; /* Placeholder for UNWH Logo */
+            opacity: 0.15; /* Subtle opacity */
+            z-index: 1;
+        }
+
+
+        /* --- MAIN CONTENT --- */
+        .main-content { padding: 40px 0; }
+        .section-heading { 
+            color: var(--unwh-blue); 
+            font-weight: 700; 
+            margin-bottom: 30px; 
+            border-left: 5px solid var(--unwh-orange); 
+            padding-left: 15px; 
+            font-size: 2rem;
+        }
+        .intro-text p { line-height: 1.8; font-size: 16px; text-align: justify; margin-bottom: 20px; }
+
+        /* --- FEATURE HIGHLIGHTS --- */
+        .highlights-section {
+            background-color: var(--light-grey);
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+        .highlight-item {
+            text-align: center;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--unwh-blue);
+        }
+        .highlight-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            border-bottom-color: var(--unwh-orange);
+        }
+        .highlight-item .icon {
+            font-size: 3rem;
+            color: var(--unwh-orange);
+            margin-bottom: 20px;
+        }
+        .highlight-item h4 {
+            color: var(--unwh-blue);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .highlight-item p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* --- STICKY ENQUIRY FORM --- */
+        .enquiry-card {
+            background: var(--unwh-blue);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            position: sticky;
+            top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        .enquiry-card h3 { font-size: 20px; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
+        .form-control, .form-select { margin-bottom: 15px; border-radius: 4px; border: none; padding: 10px; }
+        .btn-submit { background: var(--unwh-orange); color: white; width: 100%; font-weight: 700; border: none; padding: 12px; border-radius: 4px; transition: 0.3s; }
+        .btn-submit:hover { background: #d44d1c; transform: scale(1.02); }
+
+        /* --- ADMISSION STRIP --- */
+        .admission-strip {
+            background: var(--unwh-blue); /* Changed to blue for impact */
+            color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 5px solid var(--unwh-orange); /* Changed to left border */
+        }
+        .admission-strip h4 { color: white; font-weight: 700; margin: 0; }
+        .admission-strip p { color: rgba(255,255,255,0.8); margin: 0; }
+        .btn-apply-now { background: var(--unwh-orange); color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .btn-apply-now:hover { background: #d44d1c; }
+
+        /* --- PROGRAMS GRID --- */
+        .programs-grid { background: #f9f9f9; padding: 60px 0; border-top: 1px solid #eee; }
+        .grid-title { text-align: center; color: var(--unwh-blue); font-weight: 800; margin-bottom: 40px; font-size: 2.5rem; }
+        
+        .prog-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 8px;
+            height: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid transparent; /* default */
+        }
+        .prog-card:hover { 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12); 
+            transform: translateY(-8px); 
+            border-bottom-color: var(--unwh-orange); /* hover effect */
+        }
+        .prog-card h5 { font-size: 1.1rem; margin: 0; color: var(--unwh-blue); font-weight: 700; }
+
+        /* --- CAREER OPPORTUNITIES --- */
+        .career-section {
+            padding: 60px 0;
+            background: linear-gradient(to right, #eaf2f8, #f8f9fa);
+            border-top: 1px solid #ddd;
+        }
+        .career-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .career-list li {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            font-size: 16px;
+            color: var(--dark-grey);
+            border-left: 4px solid var(--unwh-blue);
+            transition: all 0.2s ease;
+        }
+        .career-list li:hover {
+            transform: translateX(5px);
+            border-left-color: var(--unwh-orange);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .career-list li i {
+            color: var(--unwh-orange);
+            margin-right: 10px;
+        }
+
+        @media (max-width: 991px) {
+            .hero-banner h1 { font-size: 2.5rem; }
+            .hero-banner p { font-size: 1rem; }
+            .enquiry-card { position: relative; top: 0; margin-top: 30px; }
+            .admission-strip { flex-direction: column; text-align: center; gap: 15px; }
+            .section-heading { font-size: 1.8rem; }
+            .grid-title { font-size: 2rem; }
+        }
+        /* yanha se start hai footer wali css  */
+/* ================= FOOTER MAIN ================= */
+.university-footer {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+}
+
+/* ================= GRID ================= */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* ================= LEFT BLOCK ================= */
+.logo-contact {
+    background: #003366;
+    padding: 25px 30px 40px 30px; /* overall padding */
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-box {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-bottom: 20px;
+    margin-left: 0;    
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+    margin-bottom: 20px;
+    margin-top: -35px; /* address, email, phone thoda upar logo ke neeche */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+/* ================= FOOTER COLUMNS ================= */
+.footer-column:not(.logo-contact) {
+    padding-top: 80px; /* columns thoda neeche logo ke samne */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    background: #d65713;
+    margin-top: 8px;
+}
+
+/* ================= LINKS ================= */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    position: relative;
+    font-size: 15px;
+    color: #8cc63e;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.footer-column ul li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    color: #f15a22;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #f15a22;
+    transform: scale(1.05);
+    padding-left: 24px;
+}
+
+.footer-column ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-column ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-column ul li a:visited {
+    color: inherit;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons-small {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons-small a {
+    color: #f37142;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-small a:hover {
+    transform: scale(1.2);
+}
+
+/* ================= BOTTOM BAR ================= */
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+    
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-contact {
+        grid-column: 1 / -1;
+        border-radius: 12px;
+        padding: 25px 30px 40px 30px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 40px;
+    }
+
+    .footer-logo {
+        max-width: 260px;
+        margin-top: 0px; /* responsive logo bas bahut thoda upar */
+    }
+
+    .contact-info {
+        margin-top: -30px; /* responsive contact info upar logo ke neeche */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        max-width: 220px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 30px;
+    }
+
+    .contact-info {
+        margin-top: -30px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Petroleum Engineering & Earth Sciences</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="hero-banner">
+        <div class="container">
+            <h1>Unearth the Future with Petroleum & Earth Sciences</h1>
+            <p>Explore the depths of the Earth and harness its resources sustainably. At UNWH, we prepare you for a dynamic career in energy, geology, and environmental management.</p>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="section-heading">Welcome to Petroleum Engineering & Earth Sciences at UNWH</h2>
+                
+                <div class="intro-text">
+                    <p>The Department of Petroleum Engineering and Earth Sciences at UNWH focuses on the exploration, extraction, production, and management of hydrocarbons and other geological resources, alongside addressing critical environmental challenges.</p>
+                    
+                    <p>Our curriculum integrates fundamental principles of geology, geophysics, reservoir engineering, and drilling technology with an emphasis on sustainable practices and advanced simulation tools. Students gain practical experience through field trips to geological sites (like the nearby Himalayan foothills) and industry-standard software training.</p>
+
+                    <p>Led by a team of experienced faculty from both academia and industry, the department is committed to fostering innovative research in unconventional resources, carbon capture, and environmental impact assessment. Graduates are prepared for diverse roles in the energy sector, environmental consulting, and governmental agencies.</p>
+                </div>
+
+                <div class="highlights-section">
+                    <div class="container">
+                        <h3 class="section-heading text-center" style="border-left: none; padding-left: 0;">Why Petroleum & Earth Sciences at UNWH?</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="highlight-item">
+                                    <div class="icon"><i class="fas fa-mountain"></i></div>
+                                    <h4>Geological Proximity</h4>
+                                    <p>Leverage our location near the Himalayas for unique geological field studies.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="highlight-item">
+                                    <div class="icon"><i class="fas fa-oil-can"></i></div>
+                                    <h4>Industry-Focused Learning</h4>
+                                    <p>Gain expertise with modern tools and techniques relevant to the global energy sector.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="highlight-item">
+                                    <div class="icon"><i class="fas fa-leaf"></i></div>
+                                    <h4>Sustainable Resource Management</h4>
+                                    <p>Focus on eco-friendly extraction methods and environmental conservation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admission-strip shadow-sm">
+                    <div>
+                        <h4>Admissions Open 2026</h4>
+                        <p class="mb-0">Shape the energy landscape of tomorrow.</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="enquiry-card">
+                    <h3>Enquire Now</h3>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Full Name*" required>
+                        <input type="email" class="form-control" placeholder="Email Address*" required>
+                        <input type="tel" class="form-control" placeholder="Phone Number*" required>
+                        <select class="form-select">
+                            <option selected>Petroleum Engineering & Earth Sciences</option>
+                            <option>Aerospace Engineering</option>
+                            <option>Civil Engineering</option>
+                            <option>Mechanical Engineering</option>
+                        </select>
+                        <button type="submit" class="btn-submit">GET DETAILS</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="programs-grid">
+        <div class="container">
+            <h2 class="grid-title">Explore Our Programs</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>B.Tech in Petroleum Engineering</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>B.Tech Petroleum (Hons.) in Upstream & Downstream Processes</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>M.Tech in Petroleum Reservoir Engineering</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>M.Tech in Geological & Geophysical Exploration</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>M.Sc. Applied Geology</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>Ph.D. in Petroleum & Earth Sciences</h5></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="career-section">
+        <div class="container">
+            <h3 class="section-heading text-center" style="border-left: none; padding-left: 0;">Career Opportunities</h3>
+            <p class="text-center mb-5 lead">Graduates are in high demand across the energy, mining, and environmental sectors.</p>
+            <ul class="career-list">
+                <li><i class="fas fa-check-circle"></i> Petroleum Engineer</li>
+                <li><i class="fas fa-check-circle"></i> Geologist/Geophysicist</li>
+                <li><i class="fas fa-check-circle"></i> Reservoir Engineer</li>
+                <li><i class="fas fa-check-circle"></i> Drilling Engineer</li>
+                <li><i class="fas fa-check-circle"></i> Environmental Consultant</li>
+                <li><i class="fas fa-check-circle"></i> Energy Analyst</li>
+                <li><i class="fas fa-check-circle"></i> Mining Engineer</li>
+                <li><i class="fas fa-check-circle"></i> Research Scientist</li>
+            </ul>
+        </div>
+    </section>
+    <!-- FINAL--- yanha se start hai footer wala porsen  -->
+ <footer class="university-footer">
+    <div class="footer-container">
+
+        <!-- Left Column - Logo & Contact -->
+        <div class="footer-column logo-contact">
+            <div class="logo-box">
+                <img src="logo.png" alt="UNWH Logo" class="footer-logo">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    Village- Sangaon, Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    info1UNWH@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    +916396004079 (Enquiry for D.H.M., B.H.M., M.B.A)
+                </div>
+            </div>
+
+            <div class="social-icons-small">
+                <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/twitt_login?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=md4oOsCbkO4"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>About <span class="underline"></span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="footerapprovel.html">Approvals & Affiliations</a></li>
+                <li><a href="footerchancellorandvcmassege.html">Messages From Chancellor & VC</a></li>
+                <li><a href="footermission&core.html">Mission & Core</a></li>
+                <li><a href="footerachievements.html">Achievements</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="footerstructure 2025-26.html">Structure 2025-26</a></li>
+            </ul>
+        </div>
+
+        <!-- Academic -->
+        <div class="footer-column">
+            <h3>Academic <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerfacultyofmanagementandcommerce.html">Faculty Of Management And Commerce</a></li>
+                <li><a href="footerfacultyofcomputerapplicationandengineering.html">Faculty Of Computer Application And Engineering</a></li>
+                <li><a href="footerfacultyofhumanities.html">Faculty Of Humanities</a></li>
+                <li><a href="footerfacultyofhotelmanagement.html">Faculty Of Hotel Management</a></li>
+                <li><a href="footerfacultyofyogicscience.html">Faculty Of Yogic Science</a></li>
+                <li><a href="footerfacultyofscience&paramedicalscience.html">Faculty Of Science & Paramedical Science</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links <span class="underline"></span></h3>
+            <ul>
+                <li><a href="gallery.html">Infrastructure</a></li>
+                <li><a href="https://www.youtube.com/watch?v=md4oOsCbkO4">Virtual Tour</a></li>
+                <li><a href="lifeatunwh.html">Students Life</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+            <h3>Resources <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerprivacypolicy.html">Privacy Policy</a></li>
+                <li><a href="footercookiespolicy.html">Cookies Policy</a></li>
+                <li><a href="footerterms&conditions.html">Terms & Conditions</a></li>
+                <li><a href="footerterms&conditions.html">Refund / Cancellation Policy</a></li>
+                <li><a href="adminpannel.html">Admin Panel</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="copyright">
+                Copyright © 2025 UNWH by IT Manager Shubham Kumar
+            </div>
+            <div class="bottom-contact">
+                <span class="phone-icon">📞</span>
+                +9199927999508 · +916396004079
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

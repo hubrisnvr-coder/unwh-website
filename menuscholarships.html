@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships | UNWH University</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --unwh-blue: #002147;
+            --unwh-orange: #f15a22;
+            --gold-accent: #d4af37;
+            --light-bg: #fdfdfd;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff; color: #333; }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb-section { background: #f8f9fa; padding: 12px 0; border-bottom: 1px solid #eee; }
+        .breadcrumb { margin: 0; font-size: 13px; }
+
+        /* --- GOLDEN HERO BANNER --- */
+        .scholarship-hero {
+            background: linear-gradient(rgba(0,33,71,0.8), rgba(0,33,71,0.7)), 
+                        url('https://images.unsplash.com/photo-1523240715632-6103498a3580?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+            border-bottom: 8px solid var(--gold-accent);
+        }
+        .scholarship-hero h1 { font-size: 3.5rem; font-weight: 800; text-transform: uppercase; }
+        .hero-stars { color: var(--gold-accent); font-size: 20px; margin-bottom: 10px; }
+
+        /* --- SCHOLARSHIP CARDS --- */
+        .scheme-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #f1f1f1;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .scheme-card:hover {
+            transform: translateY(-10px);
+            border-top: 5px solid var(--unwh-orange);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+        }
+        .scheme-card i { font-size: 45px; color: var(--unwh-blue); margin-bottom: 20px; }
+        .scheme-card h4 { font-weight: 700; color: var(--unwh-blue); margin-bottom: 15px; }
+
+        /* --- TABLE STYLE --- */
+        .table-container {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin: 40px 0;
+        }
+        .table thead { background: var(--unwh-blue); color: white; }
+        .table th { padding: 18px; font-weight: 600; border: none; }
+        .table td { padding: 15px; vertical-align: middle; border-bottom: 1px solid #eee; }
+
+        /* --- SIDEBAR ALERT --- */
+        .info-sidebar {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 10px solid var(--gold-accent);
+            position: sticky;
+            top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .info-sidebar h3 { font-weight: 700; color: var(--unwh-blue); margin-bottom: 20px; }
+        .btn-check { 
+            background: var(--unwh-orange); 
+            color: white; 
+            width: 100%; 
+            padding: 15px; 
+            font-weight: 700; 
+            border-radius: 8px;
+            border: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-check:hover { background: var(--unwh-blue); transform: scale(1.02); }
+
+        /* --- SPECIAL BADGE --- */
+        .merit-badge {
+            background: #fff3cd;
+            color: #856404;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 991px) {
+            .scholarship-hero h1 { font-size: 2.2rem; }
+            .info-sidebar { margin-top: 40px; }
+        }
+        /* yanha se start hai footer wali css  */
+/* ================= FOOTER MAIN ================= */
+.university-footer {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+}
+
+/* ================= GRID ================= */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* ================= LEFT BLOCK ================= */
+.logo-contact {
+    background: #003366;
+    padding: 25px 30px 40px 30px; /* overall padding */
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-box {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-bottom: 20px;
+    margin-left: 0;    
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+    margin-bottom: 20px;
+    margin-top: -35px; /* address, email, phone thoda upar logo ke neeche */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+/* ================= FOOTER COLUMNS ================= */
+.footer-column:not(.logo-contact) {
+    padding-top: 80px; /* columns thoda neeche logo ke samne */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    background: #d65713;
+    margin-top: 8px;
+}
+
+/* ================= LINKS ================= */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    position: relative;
+    font-size: 15px;
+    color: #8cc63e;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.footer-column ul li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    color: #f15a22;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #f15a22;
+    transform: scale(1.05);
+    padding-left: 24px;
+}
+
+.footer-column ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-column ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-column ul li a:visited {
+    color: inherit;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons-small {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons-small a {
+    color: #f37142;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-small a:hover {
+    transform: scale(1.2);
+}
+
+/* ================= BOTTOM BAR ================= */
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+    
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-contact {
+        grid-column: 1 / -1;
+        border-radius: 12px;
+        padding: 25px 30px 40px 30px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 40px;
+    }
+
+    .footer-logo {
+        max-width: 260px;
+        margin-top: 0px; /* responsive logo bas bahut thoda upar */
+    }
+
+    .contact-info {
+        margin-top: -30px; /* responsive contact info upar logo ke neeche */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        max-width: 220px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 30px;
+    }
+
+    .contact-info {
+        margin-top: -30px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Scholarships</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="scholarship-hero">
+        <div class="container">
+            <div class="hero-stars"><i class="fas fa-award"></i> Excellence Rewarded</div>
+            <h1>Scholarships & Financial Aid</h1>
+            <p class="lead">Investing in the bright minds of tomorrow. Your talent deserves a path to success.</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="section-heading mb-4" style="color: var(--unwh-blue); font-weight: 800;">Our Commitment to Merit</h2>
+                <p class="lead">UNWH believes that financial constraints should never stand in the way of a brilliant mind. We offer a wide range of scholarships to support meritorious and deserving students.</p>
+                
+                <div class="row g-4 my-5">
+                    <div class="col-md-6">
+                        <div class="scheme-card">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>Merit Scholarship</h4>
+                            <p class="text-muted">Based on academic performance in qualifying exams (XII / Graduation).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="scheme-card">
+                            <i class="fas fa-mountain"></i>
+                            <h4>Uttarakhand Domicile</h4>
+                            <p class="text-muted">Special fee concession for students belonging to the hill state of Uttarakhand.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="scheme-card">
+                            <i class="fas fa-female"></i>
+                            <h4>Beti Bachao-Beti Padhao</h4>
+                            <p class="text-muted">Special scholarship scheme for girl students to promote higher education.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="scheme-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Defence Ward</h4>
+                            <p class="text-muted">Honoring our heroes with fee waivers for wards of defence personnel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-5 mb-3" style="color: var(--unwh-blue); font-weight: 700;">Merit-Based Fee Waiver Structure</h3>
+                <div class="table-container">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th>Percentage Range (XII)</th>
+                                <th>Scholarship Amount</th>
+                                <th>Applicability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>95% and Above</strong></td>
+                                <td><span class="merit-badge">100% Waiver</span></td>
+                                <td>On Tuition Fee</td>
+                            </tr>
+                            <tr>
+                                <td><strong>90% - 94.9%</strong></td>
+                                <td><span class="merit-badge">50% Waiver</span></td>
+                                <td>On Tuition Fee</td>
+                            </tr>
+                            <tr>
+                                <td><strong>85% - 89.9%</strong></td>
+                                <td><span class="merit-badge">25% Waiver</span></td>
+                                <td>On Tuition Fee</td>
+                            </tr>
+                            <tr>
+                                <td><strong>80% - 84.9%</strong></td>
+                                <td><span class="merit-badge">10% Waiver</span></td>
+                                <td>On Tuition Fee</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-info mt-4" role="alert">
+                    <i class="fas fa-info-circle"></i> <strong>Note:</strong> Scholarships are subject to renewal based on maintaining a minimum CGPA of 8.0 in subsequent semesters.
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="info-sidebar">
+                    <h3>Quick Eligibility Check</h3>
+                    <p class="small text-muted mb-4">Find out how much scholarship you are eligible for in less than a minute.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Select Your State</label>
+                            <select class="form-select form-control">
+                                <option>Uttarakhand</option>
+                                <option>Other States</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Percentage in XII / Graduation</label>
+                            <input type="number" class="form-control" placeholder="Enter % e.g. 92">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold">Category</label>
+                            <select class="form-select form-control">
+                                <option>General</option>
+                                <option>Defence Personnel Ward</option>
+                                <option>Sibling of Alumnus</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-check">Calculate Scholarship</button>
+                    </form>
+                    <p class="text-center mt-4 mb-0 small"><i class="fas fa-phone-alt"></i> Need Help? Call +91-XXXXXXXXXX</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL--- yanha se start hai footer wala porsen  -->
+ <footer class="university-footer">
+    <div class="footer-container">
+
+        <!-- Left Column - Logo & Contact -->
+        <div class="footer-column logo-contact">
+            <div class="logo-box">
+                <img src="logo.png" alt="UNWH Logo" class="footer-logo">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    Village- Sangaon, Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    info1UNWH@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    +916396004079 (Enquiry for D.H.M., B.H.M., M.B.A)
+                </div>
+            </div>
+
+            <div class="social-icons-small">
+                <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/twitt_login?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=md4oOsCbkO4"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>About <span class="underline"></span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="footerapprovel.html">Approvals & Affiliations</a></li>
+                <li><a href="footerchancellorandvcmassege.html">Messages From Chancellor & VC</a></li>
+                <li><a href="footermission&core.html">Mission & Core</a></li>
+                <li><a href="footerachievements.html">Achievements</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="footerstructure 2025-26.html">Structure 2025-26</a></li>
+            </ul>
+        </div>
+
+        <!-- Academic -->
+        <div class="footer-column">
+            <h3>Academic <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerfacultyofmanagementandcommerce.html">Faculty Of Management And Commerce</a></li>
+                <li><a href="footerfacultyofcomputerapplicationandengineering.html">Faculty Of Computer Application And Engineering</a></li>
+                <li><a href="footerfacultyofhumanities.html">Faculty Of Humanities</a></li>
+                <li><a href="footerfacultyofhotelmanagement.html">Faculty Of Hotel Management</a></li>
+                <li><a href="footerfacultyofyogicscience.html">Faculty Of Yogic Science</a></li>
+                <li><a href="footerfacultyofscience&paramedicalscience.html">Faculty Of Science & Paramedical Science</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links <span class="underline"></span></h3>
+            <ul>
+                <li><a href="gallery.html">Infrastructure</a></li>
+                <li><a href="https://www.youtube.com/watch?v=md4oOsCbkO4">Virtual Tour</a></li>
+                <li><a href="lifeatunwh.html">Students Life</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+            <h3>Resources <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerprivacypolicy.html">Privacy Policy</a></li>
+                <li><a href="footercookiespolicy.html">Cookies Policy</a></li>
+                <li><a href="footerterms&conditions.html">Terms & Conditions</a></li>
+                <li><a href="footerterms&conditions.html">Refund / Cancellation Policy</a></li>
+                <li><a href="adminpannel.html">Admin Panel</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="copyright">
+                Copyright © 2025 UNWH by IT Manager Shubham Kumar
+            </div>
+            <div class="bottom-contact">
+                <span class="phone-icon">📞</span>
+                +9199927999508 · +916396004079
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

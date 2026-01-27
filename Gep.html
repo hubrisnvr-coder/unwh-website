@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Education Program (GEP) | UNWH</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;500;700&display=swap');
+
+        :root {
+            --unwh-blue: #002147;
+            --unwh-orange: #f15a22;
+            --dark-overlay: rgba(0, 0, 0, 0.5);
+        }
+
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; color: #333; }
+
+        /* --- HERO SECTION --- */
+        .gep-hero {
+            height: 90vh;
+            background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), 
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop'); /* Himalayas Image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-text h1 { font-family: 'Montserrat', sans-serif; font-size: 5.5rem; font-weight: 900; letter-spacing: -2px; }
+        .hero-text p { font-size: 1.4rem; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; }
+
+        /* --- KEY STATS STRIP --- */
+        .stats-strip {
+            background: var(--unwh-blue);
+            color: white;
+            padding: 40px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item h2 { font-weight: 800; color: var(--unwh-orange); margin: 0; }
+
+        /* --- GLOBAL IMMERSION SECTION --- */
+        .immersion-section { padding: 100px 0; background: #fff; }
+        .heading-big { font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--unwh-blue); font-size: 2.5rem; }
+        .orange-line { width: 80px; height: 5px; background: var(--unwh-orange); margin: 20px 0; }
+
+        /* --- FEATURE BLOCKS --- */
+        .feature-box {
+            padding: 40px;
+            border-radius: 20px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .feature-box:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--unwh-orange); }
+        .feature-icon { font-size: 40px; color: var(--unwh-orange); margin-bottom: 20px; }
+
+        /* --- DESTINATION SECTION --- */
+        .destinations { background: #00152e; color: white; padding: 100px 0; }
+        .country-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 350px;
+            margin-bottom: 30px;
+        }
+        .country-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .country-card:hover img { transform: scale(1.1); }
+        .country-overlay {
+            position: absolute;
+            bottom: 0; width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonial-sec { padding: 100px 0; background: #f8f9fa; }
+        .testi-card { background: white; padding: 40px; border-radius: 20px; position: relative; }
+        .quote-icon { position: absolute; top: 20px; right: 30px; font-size: 50px; color: #eee; }
+
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 3rem; }
+        }
+        /* yanha se start hai footer wali css  */
+/* ================= FOOTER MAIN ================= */
+.university-footer {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+}
+
+/* ================= GRID ================= */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* ================= LEFT BLOCK ================= */
+.logo-contact {
+    background: #003366;
+    padding: 25px 30px 40px 30px; /* overall padding */
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-box {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-bottom: 20px;
+    margin-left: 0;    
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+    margin-bottom: 20px;
+    margin-top: -35px; /* address, email, phone thoda upar logo ke neeche */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+/* ================= FOOTER COLUMNS ================= */
+.footer-column:not(.logo-contact) {
+    padding-top: 80px; /* columns thoda neeche logo ke samne */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    background: #d65713;
+    margin-top: 8px;
+}
+
+/* ================= LINKS ================= */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    position: relative;
+    font-size: 15px;
+    color: #8cc63e;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.footer-column ul li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    color: #f15a22;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #f15a22;
+    transform: scale(1.05);
+    padding-left: 24px;
+}
+
+.footer-column ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-column ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-column ul li a:visited {
+    color: inherit;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons-small {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons-small a {
+    color: #f37142;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-small a:hover {
+    transform: scale(1.2);
+}
+
+/* ================= BOTTOM BAR ================= */
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+    
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-contact {
+        grid-column: 1 / -1;
+        border-radius: 12px;
+        padding: 25px 30px 40px 30px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 40px;
+    }
+
+    .footer-logo {
+        max-width: 260px;
+        margin-top: 0px; /* responsive logo bas bahut thoda upar */
+    }
+
+    .contact-info {
+        margin-top: -30px; /* responsive contact info upar logo ke neeche */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        max-width: 220px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 30px;
+    }
+
+    .contact-info {
+        margin-top: -30px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="gep-hero">
+        <div class="hero-text">
+            <p>Empowering Global Citizens</p>
+            <h1>GEP 2026</h1>
+            <div class="mt-4">
+                <button class="btn btn-outline-light px-5 py-3 fw-bold">EXPLORE PROGRAMS</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-strip shadow">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 stat-item"><h2>50+</h2><p>Global Partners</p></div>
+                <div class="col-md-3 stat-item"><h2>12+</h2><p>Countries</p></div>
+                <div class="col-md-3 stat-item"><h2>500+</h2><p>Students Placed</p></div>
+                <div class="col-md-3 stat-item"><h2>100%</h2><p>International Support</p></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="immersion-section">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="heading-big">A Global Vision For <br>Your Future</h2>
+                    <div class="orange-line"></div>
+                    <p class="lead text-muted">GEP provides a platform for students to study at leading universities in USA, UK, Canada, Europe, Australia and many more.</p>
+                    <p>Through our Semester Abroad Programs (SAP) and Global Internships, UNWH students gain exposure to international teaching standards, cross-cultural environments, and global career opportunities.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071" class="img-fluid rounded-5 shadow-lg" alt="Global Students">
+                </div>
+            </div>
+
+            <div class="row g-4 pt-5">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-globe-americas feature-icon"></i>
+                        <h4>International Transfer</h4>
+                        <p>Complete your first 2 years at UNWH and finish your degree at a partner university abroad with full credit transfer.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-plane-departure feature-icon"></i>
+                        <h4>Summer Schools</h4>
+                        <p>Short 4-6 week intensive programs during summer break to get a taste of international education and culture.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-university feature-icon"></i>
+                        <h4>Faculty Exchange</h4>
+                        <p>Learn from visiting professors from across the globe who bring world-class pedagogy directly to our campus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations text-center">
+        <div class="container">
+            <h2 class="heading-big text-white">Global Destinations</h2>
+            <p class="mb-5 opacity-75">Where do you want to start your journey?</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="country-card">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1000" alt="UK">
+                        <div class="country-overlay"><h3>UNITED KINGDOM</h3></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="country-card">
+                        <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?q=80&w=1000" alt="USA">
+                        <div class="country-overlay"><h3>UNITED STATES</h3></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="country-card">
+                        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=1000" alt="Australia">
+                        <div class="country-overlay"><h3>AUSTRALIA</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-sec">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12"><h2 class="heading-big">Student Success Stories</h2></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testi-card shadow-sm">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p>"My semester at the University of California through GEP was life-changing. It gave me a new perspective on Engineering and helped me land a job at a Fortune 500 company."</p>
+                        <h6 class="fw-bold mt-4">— Rahul Sharma (B.Tech CSE)</h6>
+                        <small class="text-muted">Placed at Google, London</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testi-card shadow-sm">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p>"The exposure I got in London during my management internship was incredible. UNWH's GEP team supported me from visa processing to accommodation."</p>
+                        <h6 class="fw-bold mt-4">— Priya Verma (MBA)</h6>
+                        <small class="text-muted">Global Marketing Consultant</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-center bg-white">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Ready to Go Global?</h3>
+            <p class="mb-4">Consult with our International Cell today and plan your future.</p>
+            <a href="#" class="btn btn-primary btn-lg px-5 py-3 shadow" style="background: var(--unwh-blue); border:none;">APPLY FOR GEP</a>
+        </div>
+    </section>
+    <!-- FINAL--- yanha se start hai footer wala porsen  -->
+ <footer class="university-footer">
+    <div class="footer-container">
+
+        <!-- Left Column - Logo & Contact -->
+        <div class="footer-column logo-contact">
+            <div class="logo-box">
+                <img src="logo.png" alt="UNWH Logo" class="footer-logo">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    Village- Sangaon, Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    info1UNWH@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    +916396004079 (Enquiry for D.H.M., B.H.M., M.B.A)
+                </div>
+            </div>
+
+            <div class="social-icons-small">
+                <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/twitt_login?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=md4oOsCbkO4"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>About <span class="underline"></span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="footerapprovel.html">Approvals & Affiliations</a></li>
+                <li><a href="footerchancellorandvcmassege.html">Messages From Chancellor & VC</a></li>
+                <li><a href="footermission&core.html">Mission & Core</a></li>
+                <li><a href="footerachievements.html">Achievements</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="footerstructure 2025-26.html">Structure 2025-26</a></li>
+            </ul>
+        </div>
+
+        <!-- Academic -->
+        <div class="footer-column">
+            <h3>Academic <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerfacultyofmanagementandcommerce.html">Faculty Of Management And Commerce</a></li>
+                <li><a href="footerfacultyofcomputerapplicationandengineering.html">Faculty Of Computer Application And Engineering</a></li>
+                <li><a href="footerfacultyofhumanities.html">Faculty Of Humanities</a></li>
+                <li><a href="footerfacultyofhotelmanagement.html">Faculty Of Hotel Management</a></li>
+                <li><a href="footerfacultyofyogicscience.html">Faculty Of Yogic Science</a></li>
+                <li><a href="footerfacultyofscience&paramedicalscience.html">Faculty Of Science & Paramedical Science</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links <span class="underline"></span></h3>
+            <ul>
+                <li><a href="gallery.html">Infrastructure</a></li>
+                <li><a href="https://www.youtube.com/watch?v=md4oOsCbkO4">Virtual Tour</a></li>
+                <li><a href="lifeatunwh.html">Students Life</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+            <h3>Resources <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerprivacypolicy.html">Privacy Policy</a></li>
+                <li><a href="footercookiespolicy.html">Cookies Policy</a></li>
+                <li><a href="footerterms&conditions.html">Terms & Conditions</a></li>
+                <li><a href="footerterms&conditions.html">Refund / Cancellation Policy</a></li>
+                <li><a href="adminpannel.html">Admin Panel</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="copyright">
+                Copyright © 2025 UNWH by IT Manager Shubham Kumar
+            </div>
+            <div class="bottom-contact">
+                <span class="phone-icon">📞</span>
+                +9199927999508 · +916396004079
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

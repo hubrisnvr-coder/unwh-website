@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramedical Science | UNWH University</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --medical-teal: #008080;
+            --unwh-blue: #002147;
+            --unwh-orange: #f15a22;
+            --soft-bg: #f0f4f8;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; color: #333; overflow-x: hidden; }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb-section { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; }
+        .breadcrumb { margin: 0; font-size: 13px; }
+
+        /* --- NEW DESIGN HEADER (Split Style) --- */
+        .medical-hero {
+            background: linear-gradient(135deg, rgba(0,33,71,0.9) 0%, rgba(0,128,128,0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: white;
+            border-bottom: 8px solid var(--unwh-orange);
+        }
+        .medical-hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
+        .medical-tag { background: var(--unwh-orange); color: white; padding: 5px 15px; border-radius: 50px; font-size: 14px; font-weight: 600; text-transform: uppercase; }
+
+        /* --- INFO BOXES --- */
+        .info-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            border-top: 5px solid var(--medical-teal);
+        }
+
+        /* --- CIRCULAR PROGRAM CARDS --- */
+        .course-circle {
+            text-align: center;
+            padding: 20px;
+            transition: 0.3s;
+            border-radius: 20px;
+            background: var(--soft-bg);
+            height: 100%;
+        }
+        .course-circle:hover {
+            background: var(--unwh-blue);
+            color: white;
+            transform: translateY(-10px);
+        }
+        .icon-wrap {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--medical-teal);
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- SIDEBAR ENQUIRY --- */
+        .med-form-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+        .med-form-card h3 { color: var(--unwh-blue); font-weight: 800; margin-bottom: 25px; text-align: center; }
+        .form-input { 
+            background: #f9f9f9; 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border-radius: 8px;
+            width: 100%;
+        }
+        .btn-medical {
+            background: var(--unwh-blue);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-medical:hover { background: var(--medical-teal); transform: scale(1.02); }
+
+        /* --- WHY SECTION --- */
+        .why-med { padding: 60px 0; background: #fff; }
+        .med-list li { 
+            list-style: none; 
+            margin-bottom: 15px; 
+            font-size: 16px; 
+            display: flex; 
+            align-items: center; 
+        }
+        .med-list li i { color: var(--medical-teal); margin-right: 12px; font-size: 20px; }
+
+        @media (max-width: 991px) {
+            .info-card { margin-top: 20px; }
+            .medical-hero h1 { font-size: 2.2rem; }
+        }
+        /* yanha se start hai footer wali css  */
+/* ================= FOOTER MAIN ================= */
+.university-footer {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+}
+
+/* ================= GRID ================= */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* ================= LEFT BLOCK ================= */
+.logo-contact {
+    background: #003366;
+    padding: 25px 30px 40px 30px; /* overall padding */
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-box {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-bottom: 20px;
+    margin-left: 0;    
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+    margin-bottom: 20px;
+    margin-top: -35px; /* address, email, phone thoda upar logo ke neeche */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+/* ================= FOOTER COLUMNS ================= */
+.footer-column:not(.logo-contact) {
+    padding-top: 80px; /* columns thoda neeche logo ke samne */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    background: #d65713;
+    margin-top: 8px;
+}
+
+/* ================= LINKS ================= */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    position: relative;
+    font-size: 15px;
+    color: #8cc63e;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.footer-column ul li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    color: #f15a22;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #f15a22;
+    transform: scale(1.05);
+    padding-left: 24px;
+}
+
+.footer-column ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-column ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-column ul li a:visited {
+    color: inherit;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons-small {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons-small a {
+    color: #f37142;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-small a:hover {
+    transform: scale(1.2);
+}
+
+/* ================= BOTTOM BAR ================= */
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+    
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-contact {
+        grid-column: 1 / -1;
+        border-radius: 12px;
+        padding: 25px 30px 40px 30px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 40px;
+    }
+
+    .footer-logo {
+        max-width: 260px;
+        margin-top: 0px; /* responsive logo bas bahut thoda upar */
+    }
+
+    .contact-info {
+        margin-top: -30px; /* responsive contact info upar logo ke neeche */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        max-width: 220px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 30px;
+    }
+
+    .contact-info {
+        margin-top: -30px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Paramedical Science</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="medical-hero">
+        <div class="container text-center">
+            <span class="medical-tag">Excellence in Healthcare</span>
+            <h1 class="mt-3">Faculty of Paramedical Science</h1>
+            <p>Empowering the backbone of the healthcare industry with advanced clinical training and ethical values at UNWH.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="info-card">
+                    <h2 class="mb-4" style="color: var(--unwh-blue); font-weight: 700;">Advancing Clinical Excellence</h2>
+                    <p class="lead text-muted">Paramedical professionals are the vital link in the medical chain. At UNWH, we provide a perfect blend of theoretical knowledge and intensive clinical exposure.</p>
+                    
+                    <div class="row mt-5 g-4">
+                        <div class="col-md-6">
+                            <h4 style="color: var(--medical-teal); font-weight: 700;">Our Vision</h4>
+                            <p>To produce skilled paramedical professionals who can handle high-pressure medical environments with precision and empathy.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 style="color: var(--medical-teal); font-weight: 700;">Infrastructure</h4>
+                            <p>Equipped with modern diagnostic labs, X-ray units, and dialysis simulators for real-time practical learning.</p>
+                        </div>
+                    </div>
+
+                    <hr class="my-5">
+
+                    <h3 class="mb-4" style="color: var(--unwh-blue); font-weight: 700;">Featured Programs</h3>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="course-circle">
+                                <div class="icon-wrap"><i class="fas fa-microscope"></i></div>
+                                <h5>BMLT</h5>
+                                <small>Medical Lab Tech</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="course-circle">
+                                <div class="icon-wrap"><i class="fas fa-x-ray"></i></div>
+                                <h5>BRIT</h5>
+                                <small>Radio & Imaging</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="course-circle">
+                                <div class="icon-wrap"><i class="fas fa-heartbeat"></i></div>
+                                <h5>BPT</h5>
+                                <small>Physiotherapy</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="why-med mt-5">
+                    <h3 style="color: var(--unwh-blue); font-weight: 700;" class="mb-4">Why Choose Paramedical at UNWH?</h3>
+                    <ul class="med-list p-0">
+                        <li><i class="fas fa-check-circle"></i> Clinical Training in Multi-specialty Hospitals.</li>
+                        <li><i class="fas fa-check-circle"></i> Hands-on experience with advanced medical equipment.</li>
+                        <li><i class="fas fa-check-circle"></i> Expert faculty with years of clinical & academic experience.</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Placement assistance in leading healthcare chains.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="med-form-card">
+                    <h3>Apply for 2026</h3>
+                    <form>
+                        <input type="text" class="form-input" placeholder="Full Name*" required>
+                        <input type="email" class="form-input" placeholder="Email Address*" required>
+                        <input type="tel" class="form-input" placeholder="Phone Number*" required>
+                        <select class="form-input">
+                            <option>Select Course</option>
+                            <option>B. Physiotherapy (BPT)</option>
+                            <option>B.Sc. Medical Lab Tech (BMLT)</option>
+                            <option>B.Sc. Radio & Imaging (BRIT)</option>
+                            <option>M.Sc. Paramedical Science</option>
+                        </select>
+                        <button type="submit" class="btn-medical">SUBMIT APPLICATION</button>
+                    </form>
+                    <p class="text-center mt-3 mb-0 small text-muted"><i class="fas fa-lock"></i> 100% Secure & Confidential</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL--- yanha se start hai footer wala porsen  -->
+ <footer class="university-footer">
+    <div class="footer-container">
+
+        <!-- Left Column - Logo & Contact -->
+        <div class="footer-column logo-contact">
+            <div class="logo-box">
+                <img src="logo.png" alt="UNWH Logo" class="footer-logo">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    Village- Sangaon, Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    info1UNWH@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    +916396004079 (Enquiry for D.H.M., B.H.M., M.B.A)
+                </div>
+            </div>
+
+            <div class="social-icons-small">
+                <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/twitt_login?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=md4oOsCbkO4"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>About <span class="underline"></span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="footerapprovel.html">Approvals & Affiliations</a></li>
+                <li><a href="footerchancellorandvcmassege.html">Messages From Chancellor & VC</a></li>
+                <li><a href="footermission&core.html">Mission & Core</a></li>
+                <li><a href="footerachievements.html">Achievements</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="footerstructure 2025-26.html">Structure 2025-26</a></li>
+            </ul>
+        </div>
+
+        <!-- Academic -->
+        <div class="footer-column">
+            <h3>Academic <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerfacultyofmanagementandcommerce.html">Faculty Of Management And Commerce</a></li>
+                <li><a href="footerfacultyofcomputerapplicationandengineering.html">Faculty Of Computer Application And Engineering</a></li>
+                <li><a href="footerfacultyofhumanities.html">Faculty Of Humanities</a></li>
+                <li><a href="footerfacultyofhotelmanagement.html">Faculty Of Hotel Management</a></li>
+                <li><a href="footerfacultyofyogicscience.html">Faculty Of Yogic Science</a></li>
+                <li><a href="footerfacultyofscience&paramedicalscience.html">Faculty Of Science & Paramedical Science</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links <span class="underline"></span></h3>
+            <ul>
+                <li><a href="gallery.html">Infrastructure</a></li>
+                <li><a href="https://www.youtube.com/watch?v=md4oOsCbkO4">Virtual Tour</a></li>
+                <li><a href="lifeatunwh.html">Students Life</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+            <h3>Resources <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerprivacypolicy.html">Privacy Policy</a></li>
+                <li><a href="footercookiespolicy.html">Cookies Policy</a></li>
+                <li><a href="footerterms&conditions.html">Terms & Conditions</a></li>
+                <li><a href="footerterms&conditions.html">Refund / Cancellation Policy</a></li>
+                <li><a href="adminpannel.html">Admin Panel</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="copyright">
+                Copyright © 2025 UNWH by IT Manager Shubham Kumar
+            </div>
+            <div class="bottom-contact">
+                <span class="phone-icon">📞</span>
+                +9199927999508 · +916396004079
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

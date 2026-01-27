@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty of Science & Paramedical Science - UNwH Dehradun</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #004d99;
+            --primary-dark: #003366;
+            --accent: #00b894;
+            --light-bg: #f8f9fa;
+            --gray-light: #f0f4f8;
+            --text-dark: #212529;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gray-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--primary) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 77, 153, 0.85), rgba(0, 77, 153, 0.75)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p.lead {
+            font-size: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin: 5rem 0 3.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 5px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+
+        .faculty-member {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .faculty-member:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .faculty-photo {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .faculty-info {
+            padding: 2rem 1.5rem 2.5rem;
+        }
+
+        .faculty-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .faculty-designation {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .faculty-qualification {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .faculty-message {
+            font-style: italic;
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.65rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background: #009f7f;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsiveness - Fully Fixed & Optimized */
+        @media (max-width: 992px) {
+            .hero-section { padding: 100px 0 70px; }
+            .hero-section h1 { font-size: 3.8rem; }
+            .faculty-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+            .faculty-photo { height: 340px; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section { padding: 80px 0 60px; }
+            .hero-section h1 { font-size: 3rem; }
+            .hero-section p.lead { font-size: 1.3rem; }
+            .section-title { font-size: 2.6rem; margin: 4rem 0 3rem; }
+            .faculty-grid { grid-template-columns: 1fr; gap: 2.2rem; padding: 0 0.8rem; }
+            .faculty-photo { height: 320px; }
+            .faculty-name { font-size: 1.9rem; }
+            .faculty-designation { font-size: 1.15rem; }
+            .faculty-info { padding: 1.8rem 1.2rem 2rem; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section h1 { font-size: 2.6rem; }
+            .hero-section p.lead { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; margin: 3.5rem 0 2.5rem; }
+            .faculty-photo { height: 280px; }
+            .faculty-name { font-size: 1.7rem; }
+            .faculty-designation { font-size: 1rem; }
+            .faculty-qualification, .faculty-message { font-size: 0.95rem; }
+            .read-more-btn { padding: 0.55rem 1.4rem; font-size: 0.95rem; }
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 5rem 0 3rem;
+            margin-top: 8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">UNwH Dehradun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contect.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Faculty of Science & Paramedical Science</h1>
+            <p class="lead">Our accomplished faculty blend rigorous scientific training with compassionate paramedical expertise to prepare students for impactful careers in healthcare and life sciences.</p>
+        </div>
+    </section>
+
+    <!-- Faculty Grid – Open Layout (Direct Grid) -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Our Esteemed Faculty Members</h2>
+            
+            <div class="faculty-grid">
+
+                <!-- Faculty 1 -->
+                <div class="faculty-member">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="faculty-photo" alt="Dr. Arun Kumar">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Arun Kumar</h4>
+                        <p class="faculty-designation">Professor & Head</p>
+                        <p class="faculty-qualification">Ph.D. in Biotechnology, 20+ years experience<br>Specialization: Molecular Biology & Genetic Engineering</p>
+                        <p class="faculty-message">"Science is not only a disciple of reason, but also one of romance and passion."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Faculty 2 -->
+                <div class="faculty-member">
+                    <img src="https://images.unsplash.com/photo-1576765974102-b756026ecee3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="faculty-photo" alt="Dr. Neha Verma">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Neha Verma</h4>
+                        <p class="faculty-designation">Professor</p>
+                        <p class="faculty-qualification">Ph.D. in Microbiology, 17+ years experience<br>Specialization: Clinical Microbiology & Immunology</p>
+                        <p class="faculty-message">"The greatest discovery in science is the discovery of the unknown."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Faculty 3 -->
+                <div class="faculty-member">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="faculty-photo" alt="Prof. Rajesh Singh">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Rajesh Singh</h4>
+                        <p class="faculty-designation">Associate Professor</p>
+                        <p class="faculty-qualification">Ph.D. in Biochemistry, 14+ years experience<br>Specialization: Clinical Biochemistry & Diagnostics</p>
+                        <p class="faculty-message">"Understanding life at the molecular level unlocks the secrets of health."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Faculty 4 -->
+                <div class="faculty-member">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="faculty-photo" alt="Dr. Priya Sharma">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Priya Sharma</h4>
+                        <p class="faculty-designation">Associate Professor</p>
+                        <p class="faculty-qualification">Ph.D. in Physiology, 12+ years experience<br>Specialization: Human Physiology & Exercise Science</p>
+                        <p class="faculty-message">"The body achieves what the mind believes – science proves it every day."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Faculty 5 -->
+                <div class="faculty-member">
+                    <img src="https://images.unsplash.com/photo-1500648762-4d0803f8d4e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="faculty-photo" alt="Prof. Amit Patel">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Prof. Amit Patel</h4>
+                        <p class="faculty-designation">Assistant Professor</p>
+                        <p class="faculty-qualification">M.Sc. MLT, Ph.D. (Pursuing), 9+ years experience<br>Specialization: Medical Laboratory Technology</p>
+                        <p class="faculty-message">"Accurate diagnosis begins with precise laboratory science."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Faculty 6 -->
+                <div class="faculty-member">
+                    <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="faculty-photo" alt="Dr. Ritu Jain">
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Dr. Ritu Jain</h4>
+                        <p class="faculty-designation">Assistant Professor</p>
+                        <p class="faculty-qualification">Ph.D. in Microbiology, 8+ years experience<br>Specialization: Clinical Pathology & Infection Control</p>
+                        <p class="faculty-message">"Prevention is better than cure – microbiology teaches us how."</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h4 class="fw-bold mb-3">The University of North West Himalayas (UNwH)</h4>
+                    <p>Village- Sangaon Bhagwanpur, Dharkot Road, Thano<br>Dehradun – 248143, Uttarakhand, India</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-2"><strong>Contact:</strong> +916396004079 | Email: info@unwh.edu.in</p>
+                    <p>© 2026 UNwH Dehradun by IT Manager Shubham Kumar . All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

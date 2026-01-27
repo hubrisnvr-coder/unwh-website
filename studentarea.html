@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Area - The University of North West Himalayas (UNWH)</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+            color: #2c3e50;
+        }
+        
+        .student-hero {
+            background: linear-gradient(rgba(0, 80, 133, 0.85), rgba(0, 80, 133, 0.75)), 
+                        url('https://source.unsplash.com/1600x900/?university,campus,himalayas,students') center/cover no-repeat;
+            color: white;
+            padding: 180px 0 140px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .student-hero h1 {
+            font-size: 4.2rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+        }
+        
+        .student-hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 25px auto;
+            font-weight: 300;
+        }
+        
+        .quick-access {
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card-quick {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card-quick:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .card-icon {
+            font-size: 3.5rem;
+            color: #004085;
+            margin-bottom: 20px;
+        }
+        
+        .feature-section {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .resources-grid {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+        
+        .resource-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .resource-item:hover {
+            background: #004085;
+            color: white;
+            transform: scale(1.03);
+        }
+        
+        .resource-item:hover .resource-icon {
+            color: white !important;
+        }
+        
+        .resource-icon {
+            font-size: 2.8rem;
+            color: #004085;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background: #004085;
+            color: white;
+            padding: 60px 0 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="student-hero">
+        <div class="container">
+            <h1>Welcome to Your Student Area</h1>
+            <p>The University of North West Himalayas (UNWH), Dehradun Thano</p>
+            <p class="lead">Your gateway to academic success, campus life, resources & opportunities</p>
+        </div>
+    </section>
+
+    <!-- Quick Access Cards -->
+    <section class="quick-access">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-quick text-center py-5">
+                        <i class="fas fa-book-reader card-icon"></i>
+                        <h4>Learning Management System</h4>
+                        <p class="text-muted">LMS • Assignments • Lectures</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-quick text-center py-5">
+                        <i class="fas fa-calendar-alt card-icon"></i>
+                        <h4>Academic Calendar</h4>
+                        <p class="text-muted">Exams • Holidays • Events</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-quick text-center py-5">
+                        <i class="fas fa-graduation-cap card-icon"></i>
+                        <h4>Results & Grades</h4>
+                        <p class="text-muted">Check your performance</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card card-quick text-center py-5">
+                        <i class="fas fa-id-card card-icon"></i>
+                        <h4>Student ID & Services</h4>
+                        <p class="text-muted">Library • Hostel • Fees</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="feature-section">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Everything You Need as a UNWH Student</h2>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="card feature-card">
+                        <img src="https://media.istockphoto.com/id/1643695703/photo/happy-young-indian-friends-sitting-at-park-or-garden-playing-guitar-and-music-having-fun.jpg?s=1024x1024&w=is&k=20&c=QiU19lUSsoQYsutI_DjkAlPRS4dDzcfMZ5vNcuNEIE8=" class="feature-img" alt="Library">
+                        <div class="card-body text-center p-4">
+                            <h4>Digital Library & Resources</h4>
+                            <p class="text-muted">Access thousands of e-books, journals, research papers and previous year question papers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card feature-card">
+                        <img src="https://media.istockphoto.com/id/2189800011/photo/group-of-university-students-studying-and-discussing-sitting-on-the-steps-of-the-campus.jpg?s=1024x1024&w=is&k=20&c=PZhqeJzr-XUExjgB5RUiyh5px3uQ5aasMv1JU-r_opU=" class="feature-img" alt="Campus Life">
+                        <div class="card-body text-center p-4">
+                            <h4>Campus Life & Clubs</h4>
+                            <p class="text-muted">Join technical, cultural, sports, literary and social service clubs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card feature-card">
+                        <img src="https://media.istockphoto.com/id/1272822805/photo/group-of-students-studying-in-a-park-stock-photo.jpg?s=1024x1024&w=is&k=20&c=G7f8gHDD1Y0OPSL0UmovbjyDfl8ddmq_MhS3CXO1Tyw=" class="feature-img" alt="Placements">
+                        <div class="card-body text-center p-4">
+                            <h4>Training & Placements</h4>
+                            <p class="text-muted">Career guidance, internship opportunities and campus recruitment drives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="resources-grid">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Popular Student Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="resource-item text-center">
+                        <i class="fas fa-chalkboard-teacher resource-icon"></i>
+                        <h4>Online Classes Portal</h4>
+                        <p>Live & recorded lectures • Attendance • Study material</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="resource-item text-center">
+                        <i class="fas fa-file-download resource-icon"></i>
+                        <h4>Download Center</h4>
+                        <p>Syllabus • Notes • Question papers • Forms</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="resource-item text-center">
+                        <i class="fas fa-headset resource-icon"></i>
+                        <h4>Student Helpline</h4>
+                        <p>24×7 support • Grievance redressal • Academic queries</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="resource-item text-center">
+                        <i class="fas fa-ticket-alt resource-icon"></i>
+                        <h4>Event & Workshop Registration</h4>
+                        <p>Upcoming seminars • Webinars • Technical fests</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="resource-item text-center">
+                        <i class="fas fa-users resource-icon"></i>
+                        <h4>Student Council & Feedback</h4>
+                        <p>Voice your opinion • Suggestion box • Elections</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="resource-item text-center">
+                        <i class="fas fa-mobile-alt resource-icon"></i>
+                        <h4>UNWH Mobile App</h4>
+                        <p>All services at your fingertips • Push notifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <h4>The University of North West Himalayas (UNWH)</h4>
+            <p>Dehradun Thano • Empowering Minds in the Lap of Himalayas</p>
+            <p class="mt-4">&copy; 2026 UNWH by IT Manager Shubham kumar - Student Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

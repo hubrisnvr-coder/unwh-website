@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - UNwH Dehradun</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #004d99;
+            --primary-dark: #003366;
+            --accent: #00b894;
+            --light-bg: #f0f4f8;
+            --dark: #212529;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-section {
+            position: relative;
+            height: 85vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 77, 153, 0.78), rgba(0, 77, 153, 0.68)),
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .hero-content { max-width: 90%; }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.2rem;
+            font-weight: 700;
+            text-shadow: 5px 5px 25px rgba(0,0,0,0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        .hero-content .lead { font-size: 2rem; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); }
+
+        /* Mobile Hero */
+        @media (max-width: 992px) { .hero-section { height: 70vh; min-height: 450px; } .hero-content h1 { font-size: 3.8rem; } .hero-content .lead { font-size: 1.5rem; } }
+        @media (max-width: 768px) { .hero-section { height: 60vh; min-height: 400px; background-attachment: scroll; } .hero-content h1 { font-size: 2.8rem; } .hero-content .lead { font-size: 1.3rem; } }
+        @media (max-width: 576px) { .hero-content h1 { font-size: 2.4rem; } .hero-content .lead { font-size: 1.1rem; } }
+
+        /* Program Cards */
+        .program-category {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+        .category-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0; }
+        .category-header p { font-size: 1.3rem; opacity: 0.9; margin-top: 0.8rem; }
+
+        .program-list { padding: 2rem 1.5rem; }
+
+        .program-item {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        .program-item:last-child { border-bottom: none; }
+        .program-item:hover { background: #f8fdff; }
+
+        .program-icon {
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-right: 1.5rem;
+            min-width: 60px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .program-details { flex: 1; }
+        .program-details h4 { font-weight: 700; color: var(--primary-dark); margin: 0 0 0.5rem; font-size: 1.5rem; }
+        .program-details p { margin: 0; color: #555; font-size: 1.05rem; }
+
+        .duration-badge {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            padding: 0.45rem 1rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        /* Mobile: Full stack + center */
+        @media (max-width: 768px) {
+            .program-item { flex-direction: column; text-align: center; padding: 1.8rem 1rem; }
+            .program-icon { margin: 0 0 1.2rem 0; font-size: 3.2rem; }
+            .program-details h4 { font-size: 1.4rem; }
+            .program-details p { font-size: 1rem; }
+            .duration-badge { margin-top: 1rem; padding: 0.5rem 1.2rem; font-size: 1rem; }
+            .category-header { padding: 2rem 1rem; }
+            .category-header h2 { font-size: 2.4rem; }
+            .category-header p { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 576px) {
+            .program-item { padding: 1.5rem 0.8rem; }
+            .program-icon { font-size: 2.8rem; }
+            .program-details h4 { font-size: 1.3rem; }
+            .program-details p { font-size: 0.95rem; }
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 0 2.5rem;
+            margin-top: 6rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">UNwH Dehradun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="program.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footerapprovel.html">Approvals & Affiliations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footerchancellorandvcmassege.html">Leadership Messages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footermission&core.html">Mission & Core Values</a></li>
+                    <li class="nav-item"><a class="nav-link" href="footerachievements.html">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contect.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Our Academic Programs</h1>
+            <p class="lead">Diverse, Innovative & Industry-Aligned Courses | From Himalayan Roots to Global Careers</p>
+            <span class="badge bg-accent px-5 py-3 mt-3">Admissions Open 2025-26 | Apply Now!</span>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+
+            <!-- 1. Management & Commerce -->
+            <div class="program-category mb-5">
+                <div class="category-header">
+                    <h2>Management & Commerce</h2>
+                    <p>BBA, MBA, B.Com, M.Com & Related Programs</p>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <i class="fas fa-briefcase program-icon"></i>
+                        <div class="program-details">
+                            <h4>BBA (Bachelor of Business Administration)</h4>
+                            <p>Specializations: Entrepreneurship, Digital Marketing, Tourism & Hospitality Management, Agri-Business</p>
+                        </div>
+                        <span class="duration-badge">3 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-graduation-cap program-icon"></i>
+                        <div class="program-details">
+                            <h4>MBA (Master of Business Administration)</h4>
+                            <p>Specializations: HR, Marketing, Finance, IT, Logistics & Supply Chain, Business Analytics, Data Science, Agri-Business</p>
+                        </div>
+                        <span class="duration-badge">2 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-calculator program-icon"></i>
+                        <div class="program-details">
+                            <h4>B.Com (Bachelor of Commerce)</h4>
+                            <p>Accounting, Finance, Taxation, E-Commerce</p>
+                        </div>
+                        <span class="duration-badge">3 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-chart-pie program-icon"></i>
+                        <div class="program-details">
+                            <h4>M.Com (Master of Commerce)</h4>
+                            <p>Advanced Accounting, Finance, Business Management</p>
+                        </div>
+                        <span class="duration-badge">2 Years</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Computer Applications & IT / Engineering -->
+            <div class="program-category mb-5">
+                <div class="category-header">
+                    <h2>Computer Applications, IT & Engineering</h2>
+                    <p>BCA, MCA, B.Tech, M.Tech & Data Science Programs</p>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <i class="fas fa-laptop-code program-icon"></i>
+                        <div class="program-details">
+                            <h4>BCA (Bachelor of Computer Applications)</h4>
+                            <p>Software Development, Web Technologies, Mobile App Development</p>
+                        </div>
+                        <span class="duration-badge">3 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-brain program-icon"></i>
+                        <div class="program-details">
+                            <h4>MCA (Master of Computer Applications)</h4>
+                            <p>Advanced Programming, Cloud Computing, AI Applications</p>
+                        </div>
+                        <span class="duration-badge">2 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-microchip program-icon"></i>
+                        <div class="program-details">
+                            <h4>B.Tech in Computer Science & Engineering</h4>
+                            <p>Specializations: AI & ML, Data Science, Cybersecurity, Cloud Computing</p>
+                        </div>
+                        <span class="duration-badge">4 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-robot program-icon"></i>
+                        <div class="program-details">
+                            <h4>M.Tech in Artificial Intelligence & Data Science</h4>
+                            <p>Advanced AI, Machine Learning, Big Data Analytics</p>
+                        </div>
+                        <span class="duration-badge">2 Years</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Arts, Humanities & Social Sciences -->
+            <div class="program-category mb-5">
+                <div class="category-header">
+                    <h2>Arts, Humanities & Social Sciences</h2>
+                    <p>BA, MA, Ph.D. in Various Disciplines</p>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <i class="fas fa-book-open program-icon"></i>
+                        <div class="program-details">
+                            <h4>BA (Bachelor of Arts)</h4>
+                            <p>Psychology, English, History, Political Science, Sociology, Economics, Geography, Public Administration, Education, Fine Arts, Hindi</p>
+                        </div>
+                        <span class="duration-badge">3 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-scroll program-icon"></i>
+                        <div class="program-details">
+                            <h4>MA (Master of Arts)</h4>
+                            <p>Psychology, Hindi, English, History, Political Science, Sociology, Economics, Geography, Public Administration, Education, Fine Arts</p>
+                        </div>
+                        <span class="duration-badge">2 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-user-graduate program-icon"></i>
+                        <div class="program-details">
+                            <h4>Ph.D. Programs in Arts & Social Sciences</h4>
+                            <p>Psychology, Hindi, English, History, Political Science, Sociology, Economics, Geography, Education & Related Fields</p>
+                        </div>
+                        <span class="duration-badge">3-5 Years</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Sciences & Agriculture -->
+            <div class="program-category mb-5">
+                <div class="category-header">
+                    <h2>Sciences & Agriculture</h2>
+                    <p>B.Sc, M.Sc, B.Sc (Hons) Agriculture & Related</p>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <i class="fas fa-flask program-icon"></i>
+                        <div class="program-details">
+                            <h4>B.Sc (Hons) Agriculture</h4>
+                            <p>Sustainable Himalayan Farming, Organic Agriculture, Agri-Business Management</p>
+                        </div>
+                        <span class="duration-badge">4 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-seedling program-icon"></i>
+                        <div class="program-details">
+                            <h4>M.Sc Agriculture (Agronomy / Horticulture)</h4>
+                            <p>Sustainable Mountain Agriculture, Climate-Resilient Crops</p>
+                        </div>
+                        <span class="duration-badge">2 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-dna program-icon"></i>
+                        <div class="program-details">
+                            <h4>B.Sc / M.Sc in Sciences</h4>
+                            <p>Physics, Chemistry, Biology, Molecular Biotechnology & Related Fields</p>
+                        </div>
+                        <span class="duration-badge">3-2 Years</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Nursing & Health Sciences -->
+            <div class="program-category mb-5">
+                <div class="category-header">
+                    <h2>Nursing & Health Sciences</h2>
+                    <p>Approved by Relevant Councils</p>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <i class="fas fa-stethoscope program-icon"></i>
+                        <div class="program-details">
+                            <h4>B.Sc Nursing</h4>
+                            <p>Approved by Uttarakhand Nursing Council & Indian Nursing Council | Clinical & Community Health Focus</p>
+                        </div>
+                        <span class="duration-badge">4 Years</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-laptop-medical program-icon"></i>
+                        <div class="program-details">
+                            <h4>Certificate / Diploma in Digital Health & Telemedicine</h4>
+                            <p>Emerging Skills for Rural & Himalayan Healthcare</p>
+                        </div>
+                        <span class="duration-badge">6-12 Months</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Diploma & Certificate Programs -->
+            <div class="program-category">
+                <div class="category-header">
+                    <h2>Diploma, Certificate & Skill Development Programs</h2>
+                    <p>Short-Term | Industry & Community Focused</p>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <i class="fas fa-tools program-icon"></i>
+                        <div class="program-details">
+                            <h4>Diploma in Organic Farming & Agri-Entrepreneurship</h4>
+                            <p>Practical Training for Sustainable Agriculture</p>
+                        </div>
+                        <span class="duration-badge">6-12 Months</span>
+                    </div>
+                    <div class="program-item">
+                        <i class="fas fa-mountain-sun program-icon"></i>
+                        <div class="program-details">
+                            <h4>Certificate in Himalayan Tourism & Hospitality</h4>
+                            <p>Eco-Tourism, Adventure Tourism, Cultural Heritage Management</p>
+                        </div>
+                        <span class="duration-badge">6 Months</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h5 class="fw-bold mb-3">The University of North West Himalayas (UNwH)</h5>
+            <p>Village- Sangaon Bhagwanpur, Dharkot Road, Thano<br>Dehradun – 248143, Uttarakhand, India</p>
+            <p class="mt-4">&copy; 2026 UNwH Dehradun by IT Manager Shubham Kumar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

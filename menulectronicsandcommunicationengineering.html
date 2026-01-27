@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics & Communication Engineering | UNWH</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --geu-blue: #002147;
+            --geu-orange: #f15a22;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fff; color: #333; }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb-section { background: #f8f9fa; padding: 12px 0; border-bottom: 1px solid #eee; }
+        .breadcrumb { margin: 0; font-size: 13px; }
+        .breadcrumb-item a { color: var(--geu-blue); text-decoration: none; }
+
+        /* --- MAIN CONTENT --- */
+        .main-content { padding: 40px 0; }
+        .page-title { color: var(--geu-blue); font-weight: 700; margin-bottom: 25px; border-left: 5px solid var(--geu-orange); padding-left: 15px; }
+        .intro-text p { line-height: 1.8; font-size: 15px; text-align: justify; margin-bottom: 20px; }
+
+        /* --- STICKY ENQUIRY FORM --- */
+        .enquiry-card {
+            background: var(--geu-blue);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            position: sticky;
+            top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        .enquiry-card h3 { font-size: 20px; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px; }
+        .form-control, .form-select { margin-bottom: 15px; border-radius: 4px; border: none; padding: 10px; }
+        .btn-submit { background: var(--geu-orange); color: white; width: 100%; font-weight: 700; border: none; padding: 12px; border-radius: 4px; transition: 0.3s; }
+        .btn-submit:hover { background: #d44d1c; transform: scale(1.02); }
+
+        /* --- ADMISSION STRIP --- */
+        .admission-strip {
+            background: #f0f4f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-right: 5px solid var(--geu-orange);
+        }
+        .admission-strip h4 { color: var(--geu-blue); font-weight: 700; margin: 0; }
+        .btn-apply-now { background: var(--geu-orange); color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; }
+
+        /* --- PROGRAMS GRID --- */
+        .programs-grid { background: #f9f9f9; padding: 60px 0; }
+        .grid-title { text-align: center; color: var(--geu-blue); font-weight: 800; margin-bottom: 40px; }
+        
+        .prog-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            height: 100%;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--geu-blue);
+        }
+        .prog-card:hover { 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+            transform: translateY(-5px); 
+            border-left-color: var(--geu-orange);
+        }
+        .prog-card h5 { font-size: 15px; margin: 0; color: var(--geu-blue); font-weight: 700; }
+
+        @media (max-width: 991px) {
+            .enquiry-card { position: relative; top: 0; margin-top: 30px; }
+            .admission-strip { flex-direction: column; text-align: center; gap: 15px; }
+        }
+        /* yanha se start hai footer wali css  */
+/* ================= FOOTER MAIN ================= */
+.university-footer {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+}
+
+/* ================= GRID ================= */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* ================= LEFT BLOCK ================= */
+.logo-contact {
+    background: #003366;
+    padding: 25px 30px 40px 30px; /* overall padding */
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-box {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-bottom: 20px;
+    margin-left: 0;    
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+    margin-bottom: 20px;
+    margin-top: -35px; /* address, email, phone thoda upar logo ke neeche */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+/* ================= FOOTER COLUMNS ================= */
+.footer-column:not(.logo-contact) {
+    padding-top: 80px; /* columns thoda neeche logo ke samne */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    background: #d65713;
+    margin-top: 8px;
+}
+
+/* ================= LINKS ================= */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    position: relative;
+    font-size: 15px;
+    color: #8cc63e;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.footer-column ul li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    color: #f15a22;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #f15a22;
+    transform: scale(1.05);
+    padding-left: 24px;
+}
+
+.footer-column ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-column ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-column ul li a:visited {
+    color: inherit;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons-small {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons-small a {
+    color: #f37142;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-small a:hover {
+    transform: scale(1.2);
+}
+
+/* ================= BOTTOM BAR ================= */
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+    
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-contact {
+        grid-column: 1 / -1;
+        border-radius: 12px;
+        padding: 25px 30px 40px 30px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 40px;
+    }
+
+    .footer-logo {
+        max-width: 260px;
+        margin-top: 0px; /* responsive logo bas bahut thoda upar */
+    }
+
+    .contact-info {
+        margin-top: -30px; /* responsive contact info upar logo ke neeche */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        max-width: 220px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 30px;
+    }
+
+    .contact-info {
+        margin-top: -30px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Electronics & Communication Engineering</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="page-title">Electronics & Communication Engineering</h1>
+                
+                <div class="intro-text">
+                    <p>The Department of Electronics & Communication Engineering at UNWH is dedicated to excellence in teaching and research. ECE is a foundational field that powers the modern world, from smartphones and satellite communication to robotics and AI-driven hardware.</p>
+                    
+                    <p>Our labs are equipped with the latest technology in VLSI design, Embedded Systems, and Signal Processing. We focus on hands-on learning, encouraging students to work on real-world projects and participate in national-level hackathons.</p>
+
+                    <p>Our faculty members are highly qualified, with research interests spanning across 5G technology, IoT, and Microelectronics. We ensure our students are industry-ready through collaborations with leading tech organizations.</p>
+                </div>
+
+                <div class="admission-strip shadow-sm">
+                    <div>
+                        <h4>Admissions Open 2026</h4>
+                        <p class="mb-0 text-muted">Join the next generation of innovators.</p>
+                    </div>
+                    <a href="#" class="btn-apply-now">APPLY NOW</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="enquiry-card">
+                    <h3>Enquire Now</h3>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Full Name*" required>
+                        <input type="email" class="form-control" placeholder="Email Address*" required>
+                        <input type="tel" class="form-control" placeholder="Phone Number*" required>
+                        <select class="form-select">
+                            <option selected>Electronics & Communication</option>
+                            <option>Computer Science</option>
+                            <option>Mechanical Engineering</option>
+                            <option>Civil Engineering</option>
+                        </select>
+                        <button type="submit" class="btn-submit">GET DETAILS</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="programs-grid">
+        <div class="container">
+            <h2 class="grid-title">Programs Offered</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>B.Tech in Electronics & Communication Engineering</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>B.Tech ECE (Hons.) in Internet of Things (IoT)</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>B.Tech ECE (Hons.) in Embedded Systems</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>M.Tech in Digital Communication</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>M.Tech in VLSI Design</h5></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="prog-card"><h5>Ph.D. in Electronics Engineering</h5></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FINAL--- yanha se start hai footer wala porsen  -->
+ <footer class="university-footer">
+    <div class="footer-container">
+
+        <!-- Left Column - Logo & Contact -->
+        <div class="footer-column logo-contact">
+            <div class="logo-box">
+                <img src="logo.png" alt="UNWH Logo" class="footer-logo">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    Village- Sangaon, Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    info1UNWH@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    +916396004079 (Enquiry for D.H.M., B.H.M., M.B.A)
+                </div>
+            </div>
+
+            <div class="social-icons-small">
+                <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/twitt_login?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=md4oOsCbkO4"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>About <span class="underline"></span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="footerapprovel.html">Approvals & Affiliations</a></li>
+                <li><a href="footerchancellorandvcmassege.html">Messages From Chancellor & VC</a></li>
+                <li><a href="footermission&core.html">Mission & Core</a></li>
+                <li><a href="footerachievements.html">Achievements</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="footerstructure 2025-26.html">Structure 2025-26</a></li>
+            </ul>
+        </div>
+
+        <!-- Academic -->
+        <div class="footer-column">
+            <h3>Academic <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerfacultyofmanagementandcommerce.html">Faculty Of Management And Commerce</a></li>
+                <li><a href="footerfacultyofcomputerapplicationandengineering.html">Faculty Of Computer Application And Engineering</a></li>
+                <li><a href="footerfacultyofhumanities.html">Faculty Of Humanities</a></li>
+                <li><a href="footerfacultyofhotelmanagement.html">Faculty Of Hotel Management</a></li>
+                <li><a href="footerfacultyofyogicscience.html">Faculty Of Yogic Science</a></li>
+                <li><a href="footerfacultyofscience&paramedicalscience.html">Faculty Of Science & Paramedical Science</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links <span class="underline"></span></h3>
+            <ul>
+                <li><a href="gallery.html">Infrastructure</a></li>
+                <li><a href="https://www.youtube.com/watch?v=md4oOsCbkO4">Virtual Tour</a></li>
+                <li><a href="lifeatunwh.html">Students Life</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+            <h3>Resources <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerprivacypolicy.html">Privacy Policy</a></li>
+                <li><a href="footercookiespolicy.html">Cookies Policy</a></li>
+                <li><a href="footerterms&conditions.html">Terms & Conditions</a></li>
+                <li><a href="footerterms&conditions.html">Refund / Cancellation Policy</a></li>
+                <li><a href="adminpannel.html">Admin Panel</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="copyright">
+                Copyright © 2025 UNWH by IT Manager Shubham Kumar
+            </div>
+            <div class="bottom-contact">
+                <span class="phone-icon">📞</span>
+                +9199927999508 · +916396004079
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

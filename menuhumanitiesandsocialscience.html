@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanities & Social Sciences | UNWH University</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --humanities-maroon: #800000;
+            --unwh-blue: #002147;
+            --unwh-orange: #f15a22;
+            --bg-cream: #fdfcfb;
+        }
+
+        body { font-family: 'Georgia', serif; background-color: #fff; color: #333; }
+        h1, h2, h3, h4 { font-family: 'Segoe UI', sans-serif; }
+
+        /* --- BREADCRUMB --- */
+        .breadcrumb-section { background: var(--bg-cream); padding: 12px 0; border-bottom: 1px solid #eee; }
+        .breadcrumb { margin: 0; font-size: 13px; }
+
+        /* --- CLASSIC HERO BANNER --- */
+        .humanities-hero {
+            background: linear-gradient(rgba(0,33,71,0.7), rgba(128,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+            border-bottom: 5px solid var(--unwh-orange);
+        }
+        .humanities-hero h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: 1px; }
+        .hero-subtext { font-size: 1.2rem; font-style: italic; opacity: 0.9; max-width: 800px; margin: 15px auto; }
+
+        /* --- CONTENT CARD --- */
+        .main-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 0 50px 0 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            margin-top: -60px;
+            border: 1px solid #f1f1f1;
+        }
+
+        /* --- SIDEBAR FORM (ELEGANT) --- */
+        .sidebar-form {
+            background: var(--bg-cream);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid var(--humanities-maroon);
+            position: sticky;
+            top: 20px;
+        }
+        .sidebar-form h3 { color: var(--humanities-maroon); font-weight: 700; margin-bottom: 25px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .form-control { border-radius: 0; border: 1px solid #ccc; margin-bottom: 15px; padding: 10px; }
+        .btn-apply { 
+            background: var(--humanities-maroon); 
+            color: white; 
+            width: 100%; 
+            padding: 12px; 
+            font-weight: 700; 
+            border: none; 
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-apply:hover { background: var(--unwh-blue); transform: translateY(-3px); }
+
+        /* --- SUBJECT BOXES --- */
+        .subject-card {
+            padding: 25px;
+            border-radius: 10px;
+            background: #fff;
+            transition: 0.3s;
+            border: 1px solid #eee;
+            text-align: center;
+            height: 100%;
+        }
+        .subject-card:hover {
+            border-color: var(--unwh-orange);
+            background: var(--bg-cream);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .subject-card i { font-size: 30px; color: var(--humanities-maroon); margin-bottom: 15px; }
+
+        /* --- QUOTE SECTION --- */
+        .quote-box {
+            background: var(--unwh-blue);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (max-width: 991px) {
+            .humanities-hero h1 { font-size: 2.5rem; }
+            .main-card { border-radius: 0; margin-top: 20px; }
+        }
+        /* yanha se start hai footer wali css  */
+/* ================= FOOTER MAIN ================= */
+.university-footer {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 0;
+}
+
+/* ================= GRID ================= */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    align-items: start;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* ================= LEFT BLOCK ================= */
+.logo-contact {
+    background: #003366;
+    padding: 25px 30px 40px 30px; /* overall padding */
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-box {
+    text-align: left;
+}
+
+.footer-logo {
+    max-width: 300px;
+    height: auto;
+    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-bottom: 20px;
+    margin-left: 0;    
+}
+
+/* ================= CONTACT INFO ================= */
+.contact-info {
+    margin-bottom: 20px;
+    margin-top: -35px; /* address, email, phone thoda upar logo ke neeche */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #00aaff;
+    margin-right: 10px;
+}
+
+/* ================= FOOTER COLUMNS ================= */
+.footer-column:not(.logo-contact) {
+    padding-top: 80px; /* columns thoda neeche logo ke samne */
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 40px;
+    height: 3px;
+    background: #d65713;
+    margin-top: 8px;
+}
+
+/* ================= LINKS ================= */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    position: relative;
+    font-size: 15px;
+    color: #8cc63e;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.footer-column ul li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px;
+    color: #f15a22;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #f15a22;
+    transform: scale(1.05);
+    padding-left: 24px;
+}
+
+.footer-column ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-column ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-column ul li a:visited {
+    color: inherit;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons-small {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons-small a {
+    color: #f37142;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons-small a:hover {
+    transform: scale(1.2);
+}
+
+/* ================= BOTTOM BAR ================= */
+.footer-bottom {
+    background: #0a0a0a;
+    padding: 20px 0;
+    margin-top: 60px;
+    border-top: 1px solid #222;
+}
+
+.bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+    
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-contact {
+        grid-column: 1 / -1;
+        border-radius: 12px;
+        padding: 25px 30px 40px 30px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 40px;
+    }
+
+    .footer-logo {
+        max-width: 260px;
+        margin-top: 0px; /* responsive logo bas bahut thoda upar */
+    }
+
+    .contact-info {
+        margin-top: -30px; /* responsive contact info upar logo ke neeche */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-logo {
+        max-width: 220px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .footer-column:not(.logo-contact) {
+        padding-top: 30px;
+    }
+
+    .contact-info {
+        margin-top: -30px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Humanities & Social Sciences</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="humanities-hero">
+        <div class="container">
+            <h1>Humanities & Social Sciences</h1>
+            <p class="hero-subtext">"The study of human culture, history, and society is the foundation of a progressive civilization."</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="main-card">
+                    <h2 class="mb-4" style="color: var(--unwh-blue); font-weight: 700;">Discovering the Human Experience</h2>
+                    <p style="font-size: 17px; line-height: 1.8; color: #555;">
+                        At UNWH, the Faculty of Humanities and Social Sciences is dedicated to exploring the complexities of human thought, behavior, and social structures. We foster a culture of critical thinking, creativity, and empathy, preparing our students to address the most pressing social and ethical challenges of the 21st century.
+                    </p>
+
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="subject-card">
+                                <i class="fas fa-history"></i>
+                                <h5>History</h5>
+                                <p class="small text-muted">Understanding our roots to shape the future.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="subject-card">
+                                <i class="fas fa-brain"></i>
+                                <h5>Psychology</h5>
+                                <p class="small text-muted">Decoding the mysteries of the human mind.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="subject-card">
+                                <i class="fas fa-users"></i>
+                                <h5>Sociology</h5>
+                                <p class="small text-muted">Analyzing social patterns and structures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        <h4>"Education is the most powerful weapon which you can use to change the world."</h4>
+                        <p class="mb-0 mt-2">— Nelson Mandela</p>
+                    </div>
+
+                    <h3 class="mb-4" style="color: var(--unwh-blue); font-weight: 700;">Academic Programs</h3>
+                    <div class="list-group list-group-flush mb-5">
+                        <div class="list-group-item d-flex align-items-center py-3">
+                            <i class="fas fa-pen-nib me-3 text-danger"></i> B.A. (Hons.) English / Psychology / Economics
+                        </div>
+                        <div class="list-group-item d-flex align-items-center py-3">
+                            <i class="fas fa-pen-nib me-3 text-danger"></i> M.A. in Psychology / Sociology
+                        </div>
+                        <div class="list-group-item d-flex align-items-center py-3">
+                            <i class="fas fa-pen-nib me-3 text-danger"></i> Bachelor of Social Work (BSW)
+                        </div>
+                        <div class="list-group-item d-flex align-items-center py-3">
+                            <i class="fas fa-pen-nib me-3 text-danger"></i> Ph.D. in Humanities & Social Sciences
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="sidebar-form">
+                    <h3>Request Prospectus</h3>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Student's Name" required>
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                        <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        <select class="form-control">
+                            <option>Interest in Subject</option>
+                            <option>Psychology</option>
+                            <option>Economics</option>
+                            <option>English Literature</option>
+                            <option>Social Work</option>
+                        </select>
+                        <button type="submit" class="btn-apply">Get Details Now</button>
+                    </form>
+                    <div class="mt-4 p-3 text-center" style="background: #fff; border: 1px dashed var(--unwh-orange);">
+                        <p class="mb-0 small"><strong>Admissions Open:</strong> Session 2026-27</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FINAL--- yanha se start hai footer wala porsen  -->
+ <footer class="university-footer">
+    <div class="footer-container">
+
+        <!-- Left Column - Logo & Contact -->
+        <div class="footer-column logo-contact">
+            <div class="logo-box">
+                <img src="logo.png" alt="UNWH Logo" class="footer-logo">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    Village- Sangaon, Bhagwanpur, Dharkot Road, Thano, Dehradun – 248143, Uttarakhand, India
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    info1UNWH@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    +916396004079 (Enquiry for D.H.M., B.H.M., M.B.A)
+                </div>
+            </div>
+
+            <div class="social-icons-small">
+                <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/twitt_login?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=md4oOsCbkO4"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="footer-column">
+            <h3>About <span class="underline"></span></h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="footerapprovel.html">Approvals & Affiliations</a></li>
+                <li><a href="footerchancellorandvcmassege.html">Messages From Chancellor & VC</a></li>
+                <li><a href="footermission&core.html">Mission & Core</a></li>
+                <li><a href="footerachievements.html">Achievements</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="footerstructure 2025-26.html">Structure 2025-26</a></li>
+            </ul>
+        </div>
+
+        <!-- Academic -->
+        <div class="footer-column">
+            <h3>Academic <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerfacultyofmanagementandcommerce.html">Faculty Of Management And Commerce</a></li>
+                <li><a href="footerfacultyofcomputerapplicationandengineering.html">Faculty Of Computer Application And Engineering</a></li>
+                <li><a href="footerfacultyofhumanities.html">Faculty Of Humanities</a></li>
+                <li><a href="footerfacultyofhotelmanagement.html">Faculty Of Hotel Management</a></li>
+                <li><a href="footerfacultyofyogicscience.html">Faculty Of Yogic Science</a></li>
+                <li><a href="footerfacultyofscience&paramedicalscience.html">Faculty Of Science & Paramedical Science</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links <span class="underline"></span></h3>
+            <ul>
+                <li><a href="gallery.html">Infrastructure</a></li>
+                <li><a href="https://www.youtube.com/watch?v=md4oOsCbkO4">Virtual Tour</a></li>
+                <li><a href="lifeatunwh.html">Students Life</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="placement.html">Placement</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+            <h3>Resources <span class="underline"></span></h3>
+            <ul>
+                <li><a href="footerprivacypolicy.html">Privacy Policy</a></li>
+                <li><a href="footercookiespolicy.html">Cookies Policy</a></li>
+                <li><a href="footerterms&conditions.html">Terms & Conditions</a></li>
+                <li><a href="footerterms&conditions.html">Refund / Cancellation Policy</a></li>
+                <li><a href="adminpannel.html">Admin Panel</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="bottom-container">
+            <div class="copyright">
+                Copyright © 2025 UNWH by IT Manager Shubham Kumar
+            </div>
+            <div class="bottom-contact">
+                <span class="phone-icon">📞</span>
+                +9199927999508 · +916396004079
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
