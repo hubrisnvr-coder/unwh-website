@@ -14,6 +14,7 @@ body {
 }
 
 /* ==================== TOPBAR ==================== */
+/* ==================== TOPBAR BASE STYLES ==================== */
 .topbar {
     background: #1a1a1a;
     padding: 12px 40px;
@@ -25,17 +26,14 @@ body {
     font-weight: 500;
 }
 
-.left a,
-.right a {
+.left a, .right a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
+    transition: 0.3s;
 }
 
-.left a:hover,
-.right a:hover,
-.icon:hover,
-.topbar-search:hover {
+.left a:hover, .right a:hover, .icon:hover, .topbar-search:hover {
     color: #f15a22;
 }
 
@@ -61,12 +59,72 @@ body {
     font-weight: 600;
     margin-left: 25px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .apply:hover {
     background: #78b02e;
+    color: white;
 }
 
+/* ================= MOBILE HAMBURGER & MENU ================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+}
+
+.mobile-topbar-menu {
+    display: none;
+    background: #1a1a1a;
+    padding: 15px 20px;
+    border-top: 1px solid #333;
+}
+
+.mobile-topbar-menu a {
+    display: block;
+    padding: 12px 0;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+/* ================= RESPONSIVE FIX (The Core Solution) ================= */
+@media (max-width: 768px) {
+    /* desktop-only class waale elements ko mobile par puri tarah hide karna */
+    .desktop-only {
+        display: none !important;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-right: 330px; /* Hamburger aur button ke beech gap ke liye */
+    }
+
+   .topbar {
+        display: flex;
+        justify-content: space-between; /* Hamburger ko left aur Apply ko right rakhega */
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    /* Mobile par button ko thoda chhota karna */
+    .apply {
+        align-items: center;
+        margin-left: auto; 
+        margin-right: 0;
+        padding: 6px 15px;
+        font-size: 16px;
+    }
+}
 /* ==================== HERO VIDEO SECTION ==================== */
 .hero-video {
     position: relative;
@@ -114,6 +172,7 @@ body {
     display: block;
 }
 
+
 /* ==================== MAIN MENU wala bar yanha se start hai ==================== */
 
 .main-menu {
@@ -137,7 +196,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     position: relative;
-    padding: 15px 0; /* Isse hover area link ke saath juda rehta hai */
+    padding: 15px 0;
     display: inline-block;
 }
 
@@ -156,16 +215,17 @@ body {
 }
 
 /* ================= DROPDOWN & STABILITY ================= */
+
 .dropdown {
     position: relative;
 }
 
 .mega-menu {
     display: block;
-    visibility: hidden;    
-    opacity: 0;           
-    position: fixed; 
-    top: 270px;            /* 🔥 Link ke bilkul paas set kiya hai */
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 285px;
     left: 0;
     right: 0;
     width: 100vw;
@@ -173,14 +233,11 @@ body {
     padding: 35px 60px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.8);
     z-index: 9999;
-    
-    /* Smooth transition */
     transition: all 0.3s ease-in-out;
-    transform: translateY(5px); 
+    transform: translateY(5px);
     pointer-events: none;
 }
 
-/* Hover karne par menu turant dikhega aur wahin rukega */
 .dropdown:hover .mega-menu {
     visibility: visible;
     opacity: 1;
@@ -189,6 +246,7 @@ body {
 }
 
 /* ================= CENTER CONTENT ================= */
+
 .mega-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -197,9 +255,10 @@ body {
     gap: 25px;
 }
 
-/* ================= COLUMNS (List Alignment Fix) ================= */
+/* ================= COLUMNS ================= */
+
 .mega-column {
-    text-align: left; /* Sab kuch left se shuru hoga */
+    text-align: left;
 }
 
 .mega-column h3 {
@@ -208,36 +267,34 @@ body {
     margin-bottom: 15px;
     border-bottom: 2px solid #f15a22;
     padding-bottom: 8px;
-    text-align: left;
 }
 
 .mega-column ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left; /* List ko seedha karne ke liye */
 }
 
 .mega-column ul li {
     margin: 10px 0;
-    display: block;
 }
 
 .mega-column ul li a {
     color: #ddd;
     text-decoration: none;
     font-size: 16px;
-    display: block;   /* Poori width lega taaki order sahi rahe */
+    display: block;
     transition: 0.3s;
     line-height: 1.5;
 }
 
 .mega-column ul li a:hover {
     color: #f15a22;
-    padding-left: 8px; /* Hover par halka sa aage khiskenge */
+    padding-left: 8px;
 }
 
 /* ================= RIGHT PANEL ================= */
+
 .mega-right-column {
     background: #111;
     border-radius: 10px;
@@ -263,94 +320,15 @@ body {
     margin-top: 15px;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 992px) {
-    .mega-inner {
-        grid-template-columns: 1fr;
+/* ================= MOBILE ME MAIN MENU HIDE ================= */
+
+@media (max-width: 768px) {
+    .main-menu {
+        display: none !important;
     }
 }
 
 /* ==================== MAIN MENU wala bar yanha par khatam hai ==================== */
-/* ==================== Mobile responsive ka kaam ynha se start kiya hai maine ==================== */
-@media (max-width: 768px) {
-    /* 1. Hero Section: Height ko kam rakha taaki video turant dikhe */
-    .hero-video {
-        height: auto !important;
-        min-height: 60vh !important;
-    }
-
-    /* 2. Topbar: 5 Items per line */
-    .topbar {
-        padding: 5px 2px !important;
-        display: block !important;
-    }
-
-    .topbar .left, 
-    .topbar .right {
-        display: grid !important;
-        grid-template-columns: repeat(5, 1fr) !important; /* Ek line mein 5 items */
-        gap: 3px !important;
-        width: 100% !important;
-        margin-bottom: 3px !important;
-    }
-
-    .topbar a {
-        margin: 0 !important;
-        font-size: 11px !important; /* Font size chota taki 5 fit ho sakein */
-        padding: 6px 1px !important;
-        text-align: center;
-        border: 0.5px solid rgba(255,255,255,0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1.1;
-        word-break: break-word; /* Lambe words break ho jayenge */
-    }
-
-    /* Apply Now Button ko thoda alag dikhaya */
-    .apply {
-        grid-column: span 2 !important; /* 5 mein se 2 column lega */
-        font-size: 10px !important;
-        background: #8cc63e !important;
-    }
-
-    /* 3. Main Menu: 3 Items per line (2 Lines mein 6 items complete) */
-    .main-menu {
-        padding: 5px 0 !important;
-        background: rgba(0, 0, 0, 0.8) !important ;
-    }
-
-    .menu-left {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* Ek line mein 3 items */
-        gap: 4px !important;
-        padding: 0 5px !important;
-        width: 100% !important;
-    }
-
-    .menu-link {
-        font-size: 11px !important;
-        padding: 12px 2px !important;
-        text-align: center !important;
-        border: 0.5px solid #8cc63e;
-        background: rgba(255,255,255,0.05);
-    }
-
-    /* 4. Logo: Size aur margin kam kiya */
-    .logo {
-        height: 55px !important;
-        margin: 5px auto !important;
-    }
-
-    /* 5. Mega Menu: Isse compact rakha */
-    .mega-menu {
-        position: absolute !important;
-        top: 100% !important;
-        width: 100% !important;
-        padding: 10px !important;
-    }
-}
-/* ==================== Mobile responsive ka kaam ynha se poora ynha par  kiya hai maine ==================== */
 /* ==================== WELCOME SECTION ==================== */
 .welcome-section {
     padding: 80px 20px;
