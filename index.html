@@ -12,25 +12,58 @@
 
     <!-- Topbar -->
     <div class="topbar">
-        <div class="left">
-            <a href="about.html">About</a>
-            <a href="Alumni.html">Alumni</a>
-            <a href="studentarea.html">Student Area</a>
-        </div>
-        <div class="right">
-            <a href="noticeandevent.html">Notice & Event</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="blog.html">Blog</a>
-            <a href="contect.html">Contact</a>
-            <a href="#" class="topbar-search"><i class="fas fa-search"></i></a>
-            
-            <a href="https://www.facebook.com/login/" class="icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/login" class="icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://x.com/" class="icon"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/accounts/login/?hl=en" class="icon"><i class="fab fa-instagram"></i></a>
-            <a href="applynow.html" class="apply">Apply Now</a>
-        </div>
+    <div class="hamburger" onclick="toggleTopbarMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+
+    <div class="left desktop-only">
+        <a href="about.html">About</a>
+        <a href="Alumni.html">Alumni</a>
+        <a href="studentarea.html">Student Area</a>
+    </div>
+    
+    <div class="right desktop-only">
+        <a href="noticeandevent.html">Notice & Event</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="contect.html">Contact</a>
+        <a href="#" class="topbar-search"><i class="fas fa-search"></i></a>
+
+        <a href="https://facebook.com" class="icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://linkedin.com" class="icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://x.com" class="icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" class="icon"><i class="fab fa-instagram"></i></a>
+    </div>
+    <a href="applynow.html" class="apply">Apply Now</a>
+   
+    
+</div>
+
+<div class="mobile-topbar-menu" id="mobileTopbarMenu">
+    <a href="about.html">About</a>
+    <a href="Alumni.html">Alumni</a>
+    <a href="studentarea.html">Student Area</a>
+    <a href="noticeandevent.html">Notice & Event</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="contect.html">Contact</a>
+    <!---
+    <a href="applynow.html" style="color: #8cc63e; font-weight: bold;">Apply Now</a>
+    -->
+</div>
+
+<script>
+function toggleTopbarMenu() {
+    const menu = document.getElementById("mobileTopbarMenu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
+</script>
 
     <!-- Hero Video Section -->
     <div class="hero-video">
