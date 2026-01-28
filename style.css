@@ -296,7 +296,7 @@ body {
 
     .topbar a {
         margin: 0 !important;
-        font-size: 15px !important; /* Font size chota taki 5 fit ho sakein */
+        font-size: 11px !important; /* Font size chota taki 5 fit ho sakein */
         padding: 6px 1px !important;
         text-align: center;
         border: 0.5px solid rgba(255,255,255,0.1);
