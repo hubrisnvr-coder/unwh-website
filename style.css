@@ -332,8 +332,8 @@ body {
         font-size: 11px !important;
         padding: 12px 2px !important;
         text-align: center !important;
-        border: 0.5px solid rgba(255,255,255,0.2);
-        background: #8cc63e;
+        border: 0.5px solid #8cc63e;
+        background: rgba(255,255,255,0.05);
     }
 
     /* 4. Logo: Size aur margin kam kiya */
