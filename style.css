@@ -317,7 +317,7 @@ body {
     /* 3. Main Menu: 3 Items per line (2 Lines mein 6 items complete) */
     .main-menu {
         padding: 5px 0 !important;
-        background: transparent ;
+        background: rgba(0, 0, 0, 0.8) !important ;
     }
 
     .menu-left {
