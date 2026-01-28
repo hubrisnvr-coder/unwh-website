@@ -271,6 +271,86 @@ body {
 }
 
 /* ==================== MAIN MENU wala bar yanha par khatam hai ==================== */
+/* ==================== Mobile responsive ka kaam ynha se start kiya hai maine ==================== */
+@media (max-width: 768px) {
+    /* 1. Hero Section: Height ko kam rakha taaki video turant dikhe */
+    .hero-video {
+        height: auto !important;
+        min-height: 60vh !important;
+    }
+
+    /* 2. Topbar: 5 Items per line */
+    .topbar {
+        padding: 5px 2px !important;
+        display: block !important;
+    }
+
+    .topbar .left, 
+    .topbar .right {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr) !important; /* Ek line mein 5 items */
+        gap: 3px !important;
+        width: 100% !important;
+        margin-bottom: 3px !important;
+    }
+
+    .topbar a {
+        margin: 0 !important;
+        font-size: 8px !important; /* Font size chota taki 5 fit ho sakein */
+        padding: 6px 1px !important;
+        text-align: center;
+        border: 0.5px solid rgba(255,255,255,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.1;
+        word-break: break-word; /* Lambe words break ho jayenge */
+    }
+
+    /* Apply Now Button ko thoda alag dikhaya */
+    .apply {
+        grid-column: span 2 !important; /* 5 mein se 2 column lega */
+        font-size: 10px !important;
+        background: #8cc63e !important;
+    }
+
+    /* 3. Main Menu: 3 Items per line (2 Lines mein 6 items complete) */
+    .main-menu {
+        padding: 5px 0 !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .menu-left {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Ek line mein 3 items */
+        gap: 4px !important;
+        padding: 0 5px !important;
+        width: 100% !important;
+    }
+
+    .menu-link {
+        font-size: 11px !important;
+        padding: 12px 2px !important;
+        text-align: center !important;
+        border: 0.5px solid rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.05);
+    }
+
+    /* 4. Logo: Size aur margin kam kiya */
+    .logo {
+        height: 55px !important;
+        margin: 5px auto !important;
+    }
+
+    /* 5. Mega Menu: Isse compact rakha */
+    .mega-menu {
+        position: absolute !important;
+        top: 100% !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+}
+/* ==================== Mobile responsive ka kaam ynha se poora ynha par  kiya hai maine ==================== */
 /* ==================== WELCOME SECTION ==================== */
 .welcome-section {
     padding: 80px 20px;
