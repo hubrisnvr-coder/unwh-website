@@ -326,10 +326,7 @@ body {
     .main-menu {
         display: none !important;
     }
-}
-
-/* ==================== MAIN MENU wala bar yanha par khatam hai ==================== */
-/* ==================== FLOATING PANEL ==================== */
+    /* ==================== FLOATING PANEL ==================== */
 .floating-panel {
     position: fixed;
     right: 20px;
@@ -385,6 +382,10 @@ body {
 .mail     { background: #fbbc05; }
 .enquire  { background: #ff6b35; }
 .whatsapp { background: #25d366; }
+}
+
+/* ==================== MAIN MENU wala bar yanha par khatam hai ==================== */
+
 /* ==================== WELCOME SECTION ==================== */
 .welcome-section {
     padding: 80px 20px;
