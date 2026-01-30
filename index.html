@@ -835,46 +835,8 @@ function toggleTopbarMenu() {
             <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
-    <!-- Slider ke andar ya page ke end mein ye script add kar dena -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.testimonials-slider');
-    const prevBtn = document.querySelector('.prev-arrow');
-    const nextBtn = document.querySelector('.next-arrow');
-    
-    const cardWidth = 320 + 25; // card width + gap (320px + 25px gap)
-    let scrollPosition = 0;
-
-    // Next button
-    nextBtn.addEventListener('click', () => {
-        scrollPosition += cardWidth;
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        
-        if (scrollPosition > maxScroll) {
-            scrollPosition = maxScroll; // last card tak hi jaye
-        }
-        
-        slider.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-        });
-    });
-
-    // Previous button
-    prevBtn.addEventListener('click', () => {
-        scrollPosition -= cardWidth;
-        
-        if (scrollPosition < 0) {
-            scrollPosition = 0; // start se pehle na jaye
-        }
-        
-        slider.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-        });
-    });
-});
-</script>
+    <!-- Slider ke andar ya page ka kaam yanha par poora hota hai -->
+     
 </section>
 <!-- ==================== LEADERSHIP / KEY DIGNITARIES ==================== -->
 <section class="leadership-section">
@@ -1218,7 +1180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!---or yanha se js marquee wali sure ho rhi hai -->
-<!-- FINAL WORKING JavaScript -->
+<!-- ye start hoti hai leadership wali js yanha se  -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('leadershipSlider');
@@ -1256,6 +1218,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial setup
     updateSlider();
+});
+</script>
+<!--  ye placement wali Slider ke andar ya page ke end mein ye script add kar dena -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.testimonials-slider');
+    const prevBtn = document.querySelector('.prev-arrow');
+    const nextBtn = document.querySelector('.next-arrow');
+    
+    const cardWidth = 320 + 25; // card width + gap (320px + 25px gap)
+    let scrollPosition = 0;
+
+    // Next button
+    nextBtn.addEventListener('click', () => {
+        scrollPosition += cardWidth;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        if (scrollPosition > maxScroll) {
+            scrollPosition = maxScroll; // last card tak hi jaye
+        }
+        
+        slider.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    });
+
+    // Previous button
+    prevBtn.addEventListener('click', () => {
+        scrollPosition -= cardWidth;
+        
+        if (scrollPosition < 0) {
+            scrollPosition = 0; // start se pehle na jaye
+        }
+        
+        slider.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    });
 });
 </script>
 
