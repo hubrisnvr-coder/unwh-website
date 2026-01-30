@@ -61,6 +61,11 @@ body {
     text-decoration: none;
     transition: 0.3s;
 }
+
+.apply:hover {
+    background: #78b02e;
+    color: white;
+}
 .applyy {
     background: #8cc63e;
     color: white;
@@ -72,12 +77,8 @@ body {
     transition: 0.3s;
     
 }
-.apply:hover {
-    background: #78b02e;
-    color: white;
-}
 
-.apply:hover {
+.applyy:hover {
     background: #78b02e;
     color: white;
 }
