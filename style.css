@@ -61,6 +61,21 @@ body {
     text-decoration: none;
     transition: 0.3s;
 }
+.applyy {
+    background: #8cc63e;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+    
+}
+.apply:hover {
+    background: #78b02e;
+    color: white;
+}
 
 .apply:hover {
     background: #78b02e;
