@@ -66,7 +66,7 @@ body {
     background: #78b02e;
     color: white;
 }
-.applyy {
+.enquiry-top {
     background: #8cc63e;
     color: white;
     padding: 8px 20px;
@@ -78,7 +78,7 @@ body {
     
 }
 
-.applyy:hover {
+.enquiry-top:hover {
     background: #78b02e;
     color: white;
 }
