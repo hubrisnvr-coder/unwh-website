@@ -2231,7 +2231,7 @@ body {
 
 /* ================= LEFT BLOCK ================= */
 .logo-contact {
-    background: #003366;
+    background: #396203;
     padding: 25px 30px 40px 30px; /* overall padding */
     border-radius: 0 12px 12px 0;
     display: flex;
@@ -2246,7 +2246,7 @@ body {
 .footer-logo {
     max-width: 300px;
     height: auto;
-    margin-top: 0px;  /* logo bas bahut thoda upar */
+    margin-top: 40px;  /* logo bas bahut thoda upar */
     margin-bottom: 20px;
     margin-left: 0;    
 }
@@ -2319,7 +2319,7 @@ body {
 }
 
 .footer-column ul li:hover {
-    color: #f15a22;
+    color: #e5c458;
     transform: scale(1.05);
     padding-left: 24px;
 }
