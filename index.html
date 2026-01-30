@@ -1047,46 +1047,7 @@ We have envisioned UNwH as a modern, progressive university that upholds academi
     </div>
 </section>
 
-<!-- FINAL WORKING JavaScript -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('leadershipSlider');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
 
-    if (!slider || !prevBtn || !nextBtn) return;
-
-    let currentIndex = 0;
-    const totalCards = slider.children.length;
-
-    const updateSlider = () => {
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex === totalCards - 1;
-
-        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-        nextBtn.style.opacity = currentIndex === totalCards - 1 ? '0.5' : '1';
-    };
-
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < totalCards - 1) {
-            currentIndex++;
-            updateSlider();
-        }
-    });
-
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
-        }
-    });
-
-    // Initial setup
-    updateSlider();
-});
-</script>
 <!-- ==================== BIG CALL TO ACTION BANNER ye wala hai ynnha se dala hai section  ==================== -->
 <section class="cta-banner">
     <div class="cta-bg"></div>
@@ -1257,6 +1218,46 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!---or yanha se js marquee wali sure ho rhi hai -->
+<!-- FINAL WORKING JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('leadershipSlider');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (!slider || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+    const totalCards = slider.children.length;
+
+    const updateSlider = () => {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === totalCards - 1;
+
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentIndex === totalCards - 1 ? '0.5' : '1';
+    };
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalCards - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    });
+
+    // Initial setup
+    updateSlider();
+});
+</script>
 
 </body>
 </html>
