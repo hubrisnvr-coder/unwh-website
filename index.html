@@ -7,6 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <!--- yanha se marquee wala head section sure ho rha hai -->
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--- yanha se marquee wala head section poora  ho rha hai -->
 </head>
 <body>
 
@@ -64,6 +69,30 @@ function toggleTopbarMenu() {
     }
 }
 </script>
+<!---ynha se marquee wala html sure ho rhi hai -->
+<section class="cyber-marquee-section">
+    <div class="cyber-ticker-wrap">
+        <div class="ticker-prefix">
+            <span class="glitch-text" data-text="UNWH">UNWH</span>
+            <i class="fas fa-bolt ms-2"></i>
+        </div>
+
+        <div class="ticker-content-area">
+            <div class="ticker-scroll-dynamic" id="dynamicTicker">
+                <span class="ticker-item-dynamic"><i class="fas fa-graduation-cap"></i> Admission Open 2026-27: Join UNWH Dehradun Today!</span>
+                <span class="ticker-item-dynamic"><i class="fas fa-award"></i> 100% Scholarship for Uttarakhand Toppers.</span>
+                <span class="ticker-item-dynamic"><i class="fas fa-microchip"></i> New B.Tech AI & Robotics Labs are now functional.</span>
+                <span class="ticker-item-dynamic"><i class="fas fa-user-tie"></i> Placement Alert: 45 LPA highest package in 2025!</span>
+                <span class="ticker-item-dynamic"><i class="fas fa-hotel"></i> Luxury Hostel Facilities available for Girls & Boys.</span>
+                
+                <span class="ticker-item-dynamic"><i class="fas fa-graduation-cap"></i> Admission Open 2026-27: Join UNWH Dehradun Today!</span>
+                <span class="ticker-item-dynamic"><i class="fas fa-award"></i> 100% Scholarship for Uttarakhand Toppers.</span>
+                <span class="ticker-item-dynamic"><i class="fas fa-microchip"></i> New B.Tech AI & Robotics Labs are now functional.</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!---ynha se marquee wala html or ynah par poori ho rhi hai -->
 
     <!-- Hero Video Section -->
     <div class="hero-video">
@@ -1210,6 +1239,22 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
 </footer>
+<!---or yanha se js marquee wali sure ho rhi hai -->
+/* JavaScript for extra smoothness */
+document.addEventListener('DOMContentLoaded', () => {
+    const ticker = document.getElementById('dynamicTicker');
+    
+    // Check if ticker exists to avoid errors
+    if(ticker) {
+        console.log("UNWH Marquee Loaded Successfully!");
+        
+        // Speed control (Optional: slow down on small screens)
+        if(window.innerWidth < 768) {
+            ticker.style.animationDuration = "20s";
+        }
+    }
+});
+<!---or yanha se js marquee wali sure ho rhi hai -->
 
 </body>
 </html>
